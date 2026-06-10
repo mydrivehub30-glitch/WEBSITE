@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR VIVEK SHINDE PRASHASKIYA MAHAVIDYALAYA | Official Site</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        :root {
+            --navy: #0F172A;        /* Deep Administrative Blue */
+            --gold: #C5A059;        /* Premium Champagne Gold */
+            --maroon: #7F1D1D;      /* Logo Shield Color */
+            --teal: #0D9488;        /* Logo Wing Color */
+            --glass: rgba(255, 255, 255, 0.9);
+            --white: #FFFFFF;
+            --light-gray: #F1F5F9;
+            --text-dark: #1E293B;
+            --shadow-premium: 0 20px 40px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background-color: var(--white); line-height: 1.7; overflow-x: hidden; }
+        
+        /* Glassmorphism Navigation */
+        header {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 2000;
+            border-bottom: 2px solid var(--gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .nav-wrapper {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-box {
+            background: #fff;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            padding: 3px;
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .logo-box img { width: 100%; height: 100%; object-fit: contain; }
+
+        .brand-info h1 {
+            font-size: 1.1rem;
+            color: var(--navy);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .brand-info p {
+            font-size: 0.75rem;
+            color: var(--teal);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        nav ul { display: flex; list-style: none; gap: 10px; }
+        nav ul a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        nav ul a:hover { background: var(--navy); color: var(--gold); }
+        .nav-btn { background: var(--gold); color: var(--navy) !important; border-radius: 30px !important; }
+
+        /* Modern Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1400');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+
+        .hero-content { max-width: 1000px; }
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--gold);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .cta-group { display: flex; gap: 20px; justify-content: center; }
+        .btn-main {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+        .btn-gold { background: var(--gold); color: var(--navy); }
+        .btn-outline { border: 2px solid var(--white); color: var(--white); }
+        .btn-main:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+        /* Modern Grid Sections */
+        .section-container { max-width: 1200px; margin: 100px auto; padding: 0 20px; }
+        .section-tag { color: var(--gold); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+        .section-title { font-size: 2.5rem; color: var(--navy); margin-bottom: 50px; font-weight: 800; }
+
+        /* Course Cards */
+        .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .course-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            padding: 40px;
+            border-radius: 20px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--navy);
+        }
+
+        .course-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-premium); border-bottom-color: var(--gold); }
+        .course-card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
+        .course-card h3 { font-size: 1.5rem; color: var(--navy); margin-bottom: 15px; font-weight: 800; }
+
+        /* Founder Section (Professional Spotlight) */
+        .founder-section { background: var(--light-gray); padding: 100px 0; }
+        .founder-flex { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .founder-img {
+            flex: 1;
+            background: var(--navy);
+            border-radius: 30px;
+            padding: 20px;
+            position: relative;
+        }
+        .founder-img i { font-size: 10rem; color: var(--gold); }
+        .founder-text { flex: 1.5; }
+        .founder-text blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--navy);
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* Facility Nodes */
+        .node-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .node {
+            text-align: center;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        .node:hover { background: var(--navy); color: var(--white); }
+        .node i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
+
+        /* Admission Form Area */
+        .admission-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--navy);
+            border-radius: 30px;
+            overflow: hidden;
+            color: var(--white);
+        }
+        .adm-info { padding: 60px; background: linear-gradient(135deg, var(--navy), var(--maroon)); }
+        .adm-form { padding: 60px; background: var(--white); color: var(--navy); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 700; margin-bottom: 5px; }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-family: 'Montserrat';
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .course-grid, .node-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-content h2 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-wrapper { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; font-size: 0.7rem; }
+            .hero-content h2 { font-size: 1.8rem; }
+            .course-grid, .node-grid, .admission-box, .founder-flex { grid-template-columns: 1fr; flex-direction: column; }
+            .cta-group { flex-direction: column; }
+        }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--white); padding: 80px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .f-col h4 { color: var(--gold); margin-bottom: 20px; font-weight: 800; text-transform: uppercase; }
+        .f-col ul { list-style: none; }
+        .f-col ul li { margin-bottom: 10px; }
+        .f-col a { color: #cbd5e1; text-decoration: none; }
+        .socials { display: flex; gap: 15px; margin-top: 20px; }
+        .socials a { font-size: 1.5rem; color: var(--gold); }
+        
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-wrapper">
+            <a href="#" class="brand">
+                <div class="logo-box">
+                    <img src="logo(1) copy.jpg" alt="DR VIVEK SHINDE COLLEGE LOGO" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2231/2231644.png'">
+                </div>
+                <div class="brand-info">
+                    <h1>DR VIVEK SHINDE PRASHASKIYA MAHAVIDYALAYA</h1>
+                    <p>Bhadrawati Shikshan Sanstha, Bhadrawati</p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#admission" class="nav-btn">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="hero-badge animate__animated animate__fadeInDown" style="background: var(--gold); color: #000; padding: 5px 20px; border-radius: 50px; font-weight: 800;">ADMISSIONS OPEN 2026-27</span>
+            <h2 class="animate__animated animate__zoomIn">DR VIVEK SHINDE PRASHASKIYA MAHAVIDYALAYA, BHADRAWATI</h2>
+            <p class="animate__animated animate__fadeInUp">"Building the Leaders of Tomorrow's Administration"</p>
+            <div class="cta-group">
+                <a href="#admission" class="btn-main btn-gold">Enroll Now</a>
+                <a href="#contact" class="btn-main btn-outline">Contact Office</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-container">
+        <div style="text-align: center;">
+            <span class="section-tag">Legacy of Excellence</span>
+            <h2 class="section-title">Nurturing Administrative Careers</h2>
+        </div>
+        <div class="founder-flex" style="margin-top: 50px;">
+            <div class="founder-text">
+                <h3>Integrated Civil Services Education</h3>
+                <p>Managed by Bhadrawati Shikshan Sanstha, our college is a pioneer in combining traditional degree education with intensive training for UPSC, MPSC, and competitive services.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                    <div><i class="fa fa-check-circle" style="color:var(--gold);"></i> Quality Education</div>
+                    <div><i class="fa fa-check-circle" style="color:var(--gold);"></i> Admin Skills</div>
+                    <div><i class="fa fa-check-circle" style="color:var(--gold);"></i> Career Guidance</div>
+                    <div><i class="fa fa-check-circle" style="color:var(--gold);"></i> Personality Building</div>
+                </div>
+            </div>
+            <div style="flex: 1;">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600" alt="Students" style="width:100%; border-radius:30px; border:10px solid var(--light-gray);">
+            </div>
+        </div>
+    </section>
+
+    <section class="founder-section">
+        <div class="founder-flex">
+            <div class="founder-img" style="text-align:center;">
+                <i class="fa fa-user-tie"></i>
+                <h3 style="color:var(--gold); margin-top:20px;">DR. VIVEK SHINDE</h3>
+                <p style="color:#fff;">Founder & Director</p>
+            </div>
+            <div class="founder-text">
+                <span class="section-tag">The Founder's Message</span>
+                <blockquote>"Becoming a Civil Servant is not just a job; it is a commitment to the nation. Our mission is to transform rural and urban youth into dedicated officers through disciplined training."</blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="section-container">
+        <span class="section-tag">Academic Excellence</span>
+        <h2 class="section-title">Specialized Programs</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <i class="fa fa-graduation-cap"></i>
+                <h3>B.A.</h3>
+                <p>(Civil Services Special)</p>
+                <small>UPSC/MPSC focused undergraduate degree program.</small>
+            </div>
+            <div class="course-card">
+                <i class="fa-solid fa-gavel"></i>
+                <h3>M.A.</h3>
+                <p>(Public Administration)</p>
+                <small>Advanced studies in Governance and Policy making.</small>
+            </div>
+            <div class="course-card">
+                <i class="fa fa-laptop-code"></i>
+                <h3>P.G.D.C.A.</h3>
+                <p>(Computer Science)</p>
+                <small>Post Graduate Diploma in Computer Applications for modern admin.</small>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities" class="section-container">
+        <span class="section-tag">Resources</span>
+        <h2 class="section-title">Infrastructure & Wings</h2>
+        <div class="node-grid">
+            <div class="node"><i class="fa fa-shield"></i><h4>NCC (C Cert)</h4></div>
+            <div class="node"><i class="fa fa-handshake-angle"></i><h4>NSS Wing</h4></div>
+            <div class="node"><i class="fa fa-dumbbell"></i><h4>Green Gym</h4></div>
+            <div class="node"><i class="fa fa-trophy"></i><h4>Sports Hub</h4></div>
+            <div class="node"><i class="fa fa-user-ninja"></i><h4>Mock Interview</h4></div>
+            <div class="node"><i class="fa fa-briefcase"></i><h4>Job Guidance</h4></div>
+            <div class="node"><i class="fa fa-university"></i><h4>Exam Center</h4></div>
+            <div class="node"><i class="fa fa-book-reader"></i><h4>Library</h4></div>
+        </div>
+    </section>
+
+    <section id="admission" class="section-container">
+        <div class="admission-box">
+            <div class="adm-info">
+                <h3>Enroll for 2026-27</h3>
+                <p>Join the regiment of aspiring officers today.</p>
+                <ul style="list-style:none; margin-top:30px;">
+                    <li><i class="fa fa-check text-gold"></i> Government Recognized</li>
+                    <li><i class="fa fa-check text-gold"></i> Scholarship Facilities Available</li>
+                    <li><i class="fa fa-check text-gold"></i> Expert Faculty & Guest Officers</li>
+                </ul>
+                <div style="margin-top:40px; background:rgba(255,255,255,0.1); padding:20px; border-radius:10px;">
+                    <strong>Mandatory Documents:</strong>
+                    <p style="font-size:0.8rem; margin-top:10px;">Marksheet, Aadhaar Card, Passport Photo, TC, Caste/Income Certificate (if any).</p>
+                </div>
+            </div>
+            <div class="adm-form">
+                <h3>Online Enquiry</h3>
+                <form id="admForm">
+                    <div class="form-group">
+                        <label>Student Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" class="form-control" placeholder="Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Course Interest</label>
+                        <select class="form-control">
+                            <option>B.A. (Civil Services)</option>
+                            <option>M.A. (Public Admin)</option>
+                            <option>P.G.D.C.A.</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-main btn-gold" style="width:100%; cursor:pointer;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-container">
+        <h2 class="section-title">Locate Us</h2>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:40px;">
+            <div style="background:var(--light-gray); padding:40px; border-radius:20px;">
+                <p><strong><i class="fa fa-map-marker-alt"></i> Address:</strong><br>Near Shinde Petrol Pump, Main Road, Bhadrawati, Dist: Chandrapur, Maharashtra</p>
+                <p style="margin-top:20px;"><strong><i class="fa fa-phone"></i> Contact:</strong><br>8308219191 / 9545000018</p>
+                <p style="margin-top:20px;"><strong><i class="fa fa-envelope"></i> Email:</strong><br>dvspsm@gmail.com</p>
+            </div>
+            <div style="border-radius:20px; overflow:hidden;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.77!2d79.1136!3d19.975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnDwrA1ODczLjEiTiA3OcKwMDYnNDkuMSJF!5e0!3m2!1sen!2sin!4v1680000000000" width="100%" height="300" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="f-col">
+                <h4>Dr. Vivek Shinde College</h4>
+                <p>Leading the way in Administrative and Public Service education. Shaping the future of India's Governance.</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="f-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Institution</a></li>
+                    <li><a href="#courses">Academic Courses</a></li>
+                    <li><a href="#admission">Admissions</a></li>
+                    <li><a href="#contact">Campus Location</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h4>Admissions</h4>
+                <ul>
+                    <li><a href="#">Eligibility</a></li>
+                    <li><a href="#">Scholarships</a></li>
+                    <li><a href="#">Fee Structure</a></li>
+                    <li><a href="#">Helpdesk</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h4>Portal</h4>
+                <a href="http://www.dvspsm.com" style="color:var(--gold); font-weight:800;">www.dvspsm.com</a>
+            </div>
+        </div>
+        <div style="text-align:center; padding-top:40px; font-size:0.8rem; color:#64748b; border-top:1px solid #1e293b;">
+            &copy; 2026 DR VIVEK SHINDE PRASHASKIYA MAHAVIDYALAYA, BHADRAWATI. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918308219191" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.getElementById('admForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Application submitted successfully! Our counselor will call you within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
