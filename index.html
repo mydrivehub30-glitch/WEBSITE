@@ -142,6 +142,29 @@
         }
         .brand-titles p { font-size: 0.7rem; color: var(--gold); font-weight: 700; text-transform: uppercase; }
 
+        /* Inspiration Section in Header */
+        .inspiration-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 1px solid rgba(255,255,255,0.2);
+            padding-left: 15px;
+            color: var(--white);
+        }
+        .inspiration-photo-frame {
+            background: var(--white);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--gold);
+            overflow: hidden;
+        }
+        .inspiration-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .inspiration-meta { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.9); line-height: 1.3; }
+
         .university-shield {
             display: flex;
             align-items: center;
@@ -442,7 +465,7 @@
         /* HIGH-END MULTI-COLUMN INTERACTIVE FORM REGISTRATION STRUCTURE */
         .admissions-split-container { display: grid; grid-template-columns: 1fr 1.15fr; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(42, 17, 64, 0.08); background: var(--white); }
         .admissions-left-panel { padding: 50px; background: linear-gradient(135deg, var(--purple-dark), #170924); color: var(--white); border-right: 4px solid var(--gold); }
-        .admissions-left-panel h3 { color: var(--gold); font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+        .admissions-left-panel h3 { color: var(--gold); font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; }
         .admissions-left-panel .panel-p-intro { font-size: 0.95rem; opacity: 0.85; margin-bottom: 30px; }
         .document-checklist-node { list-style: none; }
         .document-checklist-node h4 { color: var(--gold); margin-bottom: 15px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px dashed rgba(214,175,55,0.4); padding-bottom: 8px; }
@@ -474,12 +497,13 @@
         @media (max-width: 1120px) {
             header { height: auto; padding: 15px 0; position: fixed; top: 30px; }
             .nav-wrapper { flex-direction: column; gap: 12px; text-align: center; }
+            .inspiration-block { border-left: none; padding-left: 0; margin-top: 5px; }
             .university-shield { border-left: none; padding-left: 0; margin-top: 5px; }
-            .navigation-control-panel { position: fixed; top: 195px; padding: 10px 0; }
-            body { padding-top: 255px; }
+            .navigation-control-panel { position: fixed; top: 250px; padding: 10px 0; }
+            body { padding-top: 310px; }
             .tabs-row-list { flex-direction: column; width: 100%; }
             .tab-trigger-node { width: 100%; text-align: center; }
-            .dashboard-view-panel { scroll-margin-top: 270px; }
+            .dashboard-view-panel { scroll-margin-top: 320px; }
         }
 
         @media (max-width: 768px) {
@@ -511,6 +535,16 @@
                     <p>Bhadrawati Shikshan Sanstha, Bhadrawati</p>
                 </div>
             </a>
+
+            <div class="inspiration-block">
+                <div class="inspiration-photo-frame">
+                    <img src="WhatsApp Image 2026-06-12 at 11.47.53 AM.jpeg" alt="Late Nilkanthrao Shinde Sketch Portrait">
+                </div>
+                <div class="inspiration-meta">
+                    Our Inspiration:<br>
+                    <strong>Late Nilkanthrao Shinde</strong>
+                </div>
+            </div>
             
             <div class="university-shield">
                 <div class="university-logo-circle">
@@ -547,6 +581,57 @@
                 </div>
             </div>
         </section>
+
+        <div class="content-container" style="padding-top: 40px; padding-bottom: 15px;">
+            <div class="block-header">
+                <span class="section-tag">Institutional Desk</span>
+                <h2 class="block-title">Our Institutional Leadership</h2>
+            </div>
+            <div class="layout-grid-2" style="gap: 40px;">
+                <div class="spotlight-layout" style="margin-bottom: 0;">
+                    <div class="spotlight-left-panel" style="background: linear-gradient(135deg, var(--purple-dark), var(--purple-lite)); padding: 40px 20px;">
+                        <div class="spotlight-portrait" style="width: 130px; height: 130px;">
+                            <img src="WhatsApp Image 2026-06-12 at 11.54.09 AM.jpeg" alt="Dr. Vivek Shinde Portrait">
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--white);">DR. VIVEK SHINDE</h3>
+                        <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-top: 4px;">Institutional President</p>
+                    </div>
+                    <div class="spotlight-right-panel" style="padding: 30px;">
+                        <p style="font-size: 0.88rem; color: var(--text-dark); text-align: justify; font-weight: 600;">"This administrative hub operations act cleanly as key tools designed fundamentally to turn talent potentials into top ranks."</p>
+                    </div>
+                </div>
+
+                <div class="spotlight-layout" style="margin-bottom: 0;">
+                    <div class="spotlight-left-panel" style="background: linear-gradient(135deg, var(--purple-dark), #150821); padding: 40px 20px;">
+                        <div class="spotlight-portrait" style="width: 130px; height: 130px;">
+                            <img src="WhatsApp Image 2026-06-12 at 11.47.35 AM (1).jpeg" alt="Dr. Kartik Shinde Portrait">
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--white);">DR. KARTIK SHINDE</h3>
+                        <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-top: 4px;">Institutional Secretary & Founder</p>
+                    </div>
+                    <div class="spotlight-right-panel" style="padding: 30px;">
+                        <p style="font-size: 0.88rem; color: var(--text-dark); text-align: justify; font-weight: 600;">"True breakthrough requires continuous focus. Our custom frameworks deliver structured discipline maps to build future civil leaders."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container" style="padding-top: 15px; padding-bottom: 10px;">
+            <div class="block-header">
+                <span class="section-tag">Campus Tour</span>
+                <h2 class="block-title">Campus Infrastructure & Learning Environment</h2>
+            </div>
+            <div class="layout-grid-2" style="gap: 30px;">
+                <div class="image-container-frame" style="border: 2px solid var(--gold);">
+                    <img src="college (1).jpg" alt="Dr. Vivek Shinde Administrative College Main Building Front View">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;"><i class="fa-solid fa-building"></i> Institutional Campus Building</h4>
+                </div>
+                <div class="image-container-frame" style="border: 2px solid var(--gold);">
+                    <img src="college2 (1).jpg" alt="Integrated Competitive Civil Classrooms in Progress">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;"><i class="fa-solid fa-screen-users"></i> Specialized Administrative Classroom Arena</h4>
+                </div>
+            </div>
+        </div>
 
         <div class="premium-admission-ad-box">
             <div class="ad-info-side">
@@ -685,7 +770,9 @@
             
             <div class="spotlight-layout">
                 <div class="spotlight-left-panel" style="background: linear-gradient(135deg, #1A0B28, var(--purple-lite));">
-                    <div class="spotlight-circle-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                    <div class="spotlight-portrait">
+                        <img src="WhatsApp Image 2026-06-12 at 11.54.09 AM.jpeg" alt="Dr. Vivek Shinde Portrait Institutional President">
+                    </div>
                     <h3 style="font-size: 1.5rem; font-weight: 800;">DR. VIVEK SHINDE</h3>
                     <p style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9; margin-top: 4px;">Institutional President</p>
                 </div>
@@ -697,7 +784,7 @@
             <div class="spotlight-layout">
                 <div class="spotlight-left-panel">
                     <div class="spotlight-portrait">
-                        <img src="DR. KARTIK SHINDE .JPG" alt="Dr. Kartik Shinde, Secretary">
+                        <img src="WhatsApp Image 2026-06-12 at 11.47.35 AM (1).jpeg" alt="Dr. Kartik Shinde Portrait Secretary Founder">
                     </div>
                     <h3 style="font-size: 1.5rem; font-weight: 800;">DR. KARTIK SHINDE</h3>
                     <p style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9; margin-top: 4px;">Institutional Secretary & Founder</p>
@@ -837,12 +924,12 @@
                     <img src="WhatsApp Image 2026-06-11 at 10.43.58 AM.jpeg" alt="NSS Volunteer Formations Assembly">
                 </div>
                 <div class="image-container-frame">
-                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">NCC Cadets Structural Drill Line</h4>
                     <img src="WhatsApp Image 2026-06-08 at 9.23.09 AM.jpeg" alt="NCC Cadets Structural Drill Line">
+                    <h4 style="color:var(--purple-dark); margin-top:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">NCC Cadets Structural Drill Line</h4>
                 </div>
                 <div class="image-container-frame">
-                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">Cadets Outdoor Drills & Field Exercises</h4>
                     <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM.jpeg" alt="Cadets Drill Practice">
+                    <h4 style="color:var(--purple-dark); margin-top:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">Cadets Outdoor Drills & Field Exercises</h4>
                 </div>
             </div>
         </div>
