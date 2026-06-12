@@ -12,10 +12,11 @@
 
     <style>
         :root {
-            --purple-dark: #2A1140;
-            --purple-lite: #6A3993;
-            --purple-bg: #F5F1F9;
-            --gold: #D4AF37;
+            /* Civil Services Executive Branding Palette */
+            --purple-dark: #2A1140;     /* Deep Governance Purple */
+            --purple-lite: #6A3993;     /* Royal Lavender Accent */
+            --purple-bg: #F5F1F9;       /* Soft Light Violet Canvas */
+            --gold: #D4AF37;            /* Metallic Champagne Gold */
             --white: #FFFFFF;
             --text-dark: #1A0F24;       
             --text-muted: #5C5069;
@@ -27,7 +28,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--purple-bg); color: var(--text-dark); line-height: 1.7; padding-top: 145px; }
         
-        /* Smooth CSS Animation Trackers */
+        /* Premium CSS Animation Engines */
         @keyframes fadeInSlideUp {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
@@ -48,6 +49,11 @@
         @keyframes tagFlash {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.7; transform: scale(0.96); background-color: #d32f2f; }
+        }
+
+        @keyframes headlineGlow {
+            0%, 100% { text-shadow: 0 0 8px rgba(214,175,55,0.5); }
+            50% { text-shadow: 0 0 18px rgba(214,175,55,0.85), 0 0 2px #fff; }
         }
 
         @keyframes marqueeAnnouncement {
@@ -206,10 +212,10 @@
         }
         .enroll-action-btn:hover { background: var(--text-dark) !important; color: var(--white) !important; box-shadow: none; }
 
-        /* FIXED HEIGHT MANAGEMENT TO PREVENT BLOCKING TITLES */
+        /* FIXED HEIGHT CONTROLLERS FOR ALL CONTENT VIEWS */
         .dashboard-view-panel { 
             display: none; 
-            scroll-margin-top: 175px; /* Re-aligned to open exactly at title base level */
+            scroll-margin-top: 165px; 
         }
         #view-home { display: block; }
         
@@ -253,10 +259,10 @@
             border-bottom: 5px solid var(--gold);
             border-radius: 0 0 30px 30px;
         }
-        .academy-hero-billboard h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
+        .academy-hero-billboard h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; font-weight: 700; animation: headlineGlow 3s infinite ease-in-out; }
         .academy-hero-billboard p { font-size: 1.3rem; font-style: italic; opacity: 0.95; }
 
-        /* Official Structured Admission Advertisement Component on Home */
+        /* Admission Advertising Dashboard Panel */
         .premium-admission-ad-box {
             max-width: 950px;
             margin: 40px auto 25px;
@@ -296,6 +302,50 @@
         .ad-action-side ul li { font-size: 0.88rem; color: #fff; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
         .ad-action-side ul li i { color: #25D366; font-size: 1rem; }
 
+        /* EXCLUSIVE CSS INTERACTIVE TIMELINE STEP GRAPH MAP */
+        .interactive-step-map-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+            position: relative;
+        }
+        .step-map-node {
+            background: var(--white);
+            border: 2px solid var(--purple-bg);
+            border-radius: var(--radius-md);
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .step-map-node:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow);
+        }
+        .step-icon-frame {
+            width: 55px; height: 55px;
+            background: var(--purple-dark);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin: 0 auto 15px;
+            box-shadow: 0 4px 15px rgba(42, 17, 64, 0.2);
+        }
+        .step-map-node h4 { font-size: 0.95rem; color: var(--purple-dark); font-weight: 800; text-transform: uppercase; margin-bottom: 8px; }
+        .step-map-node p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+        .step-badge-number {
+            position: absolute; top: -12px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--purple-dark);
+            font-weight: 800; font-size: 0.75rem;
+            padding: 2px 10px; border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(214,175,55,0.4);
+        }
+
         .content-container { max-width: 1340px; margin: 0 auto; padding: 20px 20px 60px; }
         .block-header { margin-bottom: 40px; border-left: 5px solid var(--gold); padding-left: 20px; }
         .block-title { font-size: 2.1rem; color: var(--purple-dark); font-weight: 800; text-transform: uppercase; }
@@ -306,11 +356,10 @@
         .layout-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         
         .card-frame-premium { background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(42,17,64,0.02); margin-bottom: 30px; }
-        
         .image-container-frame { background: var(--white); padding: 25px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(214,175,55,0.25); text-align: center; transition: all 0.3s ease; }
         .image-container-frame img { width: 100%; border-radius: var(--radius-md); box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
 
-        /* Matrices Tables */
+        /* Matrices Tables Configuration */
         .data-table-matrix { width: 100%; border-collapse: collapse; margin-top: 30px; background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); }
         .data-table-matrix th { background: var(--purple-dark); color: var(--white); padding: 16px 20px; text-align: left; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; }
         .data-table-matrix td { padding: 16px 20px; border-bottom: 1px solid #E2E8F0; color: var(--text-dark); font-size: 0.92rem; }
@@ -320,7 +369,7 @@
         .bullet-checks li { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-weight: 600; font-size: 0.98rem; }
         .bullet-checks i { color: var(--gold); }
 
-        /* Founders Messages Executive Profiles */
+        /* Founders Executive Profile Module Layouts */
         .spotlight-layout { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(0,0,0,0.02); margin-bottom: 40px; }
         .spotlight-left-panel { background: linear-gradient(135deg, var(--purple-dark), #150821); color: var(--white); padding: 60px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
@@ -336,8 +385,11 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
         }
+        .spotlight-layout:hover .spotlight-portrait { transform: scale(1.05); }
         .spotlight-portrait img { width: 100%; height: 100%; object-fit: cover; }
+        
         .spotlight-circle-avatar { width: 135px; height: 135px; background: var(--white); border-radius: 50%; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--purple-dark); border: 4px solid var(--gold); }
         .spotlight-right-panel { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
         .spotlight-right-panel blockquote { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-style: italic; color: var(--purple-dark); position: relative; padding-left: 35px; line-height: 1.6; font-weight: 600; }
@@ -369,7 +421,7 @@
         .achiever-node-card h4 { font-size: 1.05rem; color: var(--purple-dark); font-weight: 700; }
         .achiever-node-card p { font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-top: 6px; letter-spacing: 0.5px; }
 
-        /* Gallery Albums Config */
+        /* Gallery Layout Config */
         .gallery-layout-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .gallery-album-card { height: 270px; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); position: relative; border: 3px solid var(--white); transition: all 0.4s ease; }
         .gallery-album-card:hover { transform: scale(1.03); box-shadow: 0 20px 45px rgba(0,0,0,0.15); }
@@ -387,7 +439,7 @@
         .clipper-content-pane h4 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--purple-dark); margin-bottom: 15px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; font-weight: 700; }
         .clipper-content-pane p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 12px; text-align: justify; line-height: 1.6; }
 
-        /* THEME-BASED UNIQUE MULTI-COLUMN INTERACTIVE FORM DESIGN */
+        /* HIGH-END MULTI-COLUMN INTERACTIVE FORM REGISTRATION STRUCTURE */
         .admissions-split-container { display: grid; grid-template-columns: 1fr 1.15fr; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(42, 17, 64, 0.08); background: var(--white); }
         .admissions-left-panel { padding: 50px; background: linear-gradient(135deg, var(--purple-dark), #170924); color: var(--white); border-right: 4px solid var(--gold); }
         .admissions-left-panel h3 { color: var(--gold); font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -400,7 +452,7 @@
         .scholarship-notice-box h4 { font-size: 0.95rem; color: #fff; text-transform: uppercase; margin-bottom: 5px; font-weight: 700; }
         .scholarship-notice-box p { font-size: 0.85rem; opacity: 0.85; line-height: 1.5; }
         
-        /* MODERN GLASSMORPHIC COMPONENT ENTRY FIELD CONTROLS */
+        /* CORE FORMS GRAPHIC COMPONENT INPUT CONTROLS */
         .admissions-form-pane { padding: 50px; background: var(--white); }
         .admissions-form-pane h3 { color: var(--purple-dark); font-weight: 800; margin-bottom: 5px; font-size: 1.7rem; text-transform: uppercase; }
         .admissions-form-pane .form-p-sub { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 30px; }
@@ -438,6 +490,7 @@
             .admissions-split-container { grid-template-columns: 1fr; }
             .admissions-left-panel { border-right: none; border-bottom: 4px solid var(--gold); padding: 35px; }
             .admissions-form-pane { padding: 35px; }
+            .interactive-step-map-grid { grid-template-columns: 1fr; gap: 25px; }
         }
     </style>
 </head>
@@ -514,7 +567,38 @@
         </div>
 
         <div class="content-container">
-            <div class="card-frame-premium" style="border-top: 4px solid var(--purple-dark); margin-top: 10px;">
+            <div class="block-header">
+                <span class="section-tag">Enrollment Blueprint</span>
+                <h2 class="block-title">Curriculum & Admissions Guideline Map</h2>
+            </div>
+            <div class="interactive-step-map-grid" style="margin-bottom: 50px;">
+                <div class="step-map-node">
+                    <span class="step-badge-number">Stage 01</span>
+                    <div class="step-icon-frame"><i class="fa-solid fa-user-pen"></i></div>
+                    <h4>Digital Enquiry</h4>
+                    <p>Transmit student metric parameters via the Online Admission Form tab to reserve helpdesk tracking.</p>
+                </div>
+                <div class="step-map-node">
+                    <span class="step-badge-number">Stage 02</span>
+                    <div class="step-icon-frame"><i class="fa-solid fa-file-shield"></i></div>
+                    <h4>Profile Screening</h4>
+                    <p>Verification of secondary and higher marksheet criteria validation slips alongside original TC records.</p>
+                </div>
+                <div class="step-map-node">
+                    <span class="step-badge-number">Stage 03</span>
+                    <div class="step-icon-frame"><i class="fa-solid fa-building-columns"></i></div>
+                    <h4>KKSU Enrollment</h4>
+                    <p>Securing the formal university regular degree allocation under official affiliation tracking codes.</p>
+                </div>
+                <div class="step-map-node">
+                    <span class="step-badge-number">Stage 04</span>
+                    <div class="step-icon-frame"><i class="fa-solid fa-user-shield"></i></div>
+                    <h4>Officer Training</h4>
+                    <p>Commencement of high-leverage mental aptitude and GS syllabus lectures combined with physical drills.</p>
+                </div>
+            </div>
+
+            <div class="card-frame-premium" style="border-top: 4px solid var(--purple-dark);">
                 <h3 style="color: var(--purple-dark); font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase;">Central India's Pioneer Civil Services Preparatory Hub</h3>
                 <p style="color: var(--text-muted); text-align: justify; margin-bottom: 15px;">
                     Dr. Vivek Shinde Administrative Services College, Bhadrawati is not just a traditional academic center; it is an elite incubation ground designed to shape the future bureaucrats of our nation. Our objective is to bridge the educational gap for rural and semi-urban talents by providing an environment built on strict administrative discipline, daily comprehensive evaluation tracking, and direct training panels with seasoned administrative officers.
@@ -542,36 +626,6 @@
                     <h4 style="font-size: 0.9rem; color: var(--purple-dark); margin-top: 10px; font-weight: 700;">Career Horizon Strategy Sessions</h4>
                 </div>
             </div>
-
-            <div class="block-header">
-                <span class="section-tag">Academic Frameworks</span>
-                <h2 class="block-title">Why Choose Our Preparatory Matrix?</h2>
-            </div>
-            <div class="layout-grid-2" style="margin-bottom: 50px;">
-                <div class="card-frame-premium" style="border-left: 5px solid var(--gold);">
-                    <h4 style="font-weight: 800; color: var(--purple-dark); margin-bottom: 10px;"><i class="fa-solid fa-graduation-cap"></i> Approved University Regular Degree</h4>
-                    <p style="font-size: 0.92rem; color: var(--text-muted);">Fully recognized degree streams affiliated with Kavikulaguru Kalidas Sanskrit University, Ramtek, ensuring perfect regular graduation credentials with full legal tracking validity.</p>
-                </div>
-                <div class="card-frame-premium" style="border-left: 5px solid var(--purple-lite);">
-                    <h4 style="font-weight: 800; color: var(--purple-dark); margin-bottom: 10px;"><i class="fa-solid fa-book-open-reader"></i> Integrated General Studies Syllabus</h4>
-                    <p style="font-size: 0.92rem; color: var(--text-muted);">In-depth, multi-dimensional tracking of Core History, Indian Polity, Administrative Ethics, Economics, and CSAT modules structured for competitive success blueprints.</p>
-                </div>
-            </div>
-
-            <div class="block-header">
-                <span class="section-tag">Prospectus Handbooks</span>
-                <h2 class="block-title">Institutional Prospectus Maps & Notifications</h2>
-            </div>
-            <div class="layout-grid-2">
-                <div class="image-container-frame">
-                    <h3 style="color:var(--purple-dark); font-weight:800; margin-bottom:15px; text-transform:uppercase; font-size:1.05rem;"><i class="fa-solid fa-bullhorn text-secondary"></i> Course Core Summary Banner</h3>
-                    <img src="WhatsApp Image 2026-05-25 at 11.14.00 PM (2).jpeg" alt="College Core Prospectus Board">
-                </div>
-                <div class="image-container-frame">
-                    <h3 style="color:var(--purple-dark); font-weight:800; margin-bottom:15px; text-transform:uppercase; font-size:1.05rem;"><i class="fa-solid fa-graduation-cap text-secondary"></i> Curriculum & Admissions Guideline Map</h3>
-                    <img src="WhatsApp Image 2026-05-25 at 11.14.01 PM.jpg" alt="Academic Presentation Advertisement Diagram">
-                </div>
-            </div>
         </div>
     </div>
 
@@ -595,6 +649,17 @@
                 </div>
                 <div>
                     <img src="WhatsApp Image 2026-06-11 at 10.44.58 AM (1).jpeg" alt="Administrative Motivational Seminar Assembly" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 6px solid var(--white);">
+                </div>
+            </div>
+
+            <div class="layout-grid-2" style="margin-bottom: 40px;">
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM (1).jpeg" alt="Grooming Sessions">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Student Evaluation Seminars</h4>
+                </div>
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.45.01 AM.jpeg" alt="Academic Analysis">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Syllabus Strategies Workshops</h4>
                 </div>
             </div>
 
@@ -727,7 +792,7 @@
             </div>
             
             <div class="layout-grid-4" style="margin-bottom: 40px;">
-                <div class="amenity-block-box"><i class="fa-solid fa-shield-halved"></i> Hell<h4>NCC Training Regiments</h4></div>
+                <div class="amenity-block-box"><i class="fa-solid fa-shield-halved"></i><h4>NCC Training Regiments</h4></div>
                 <div class="amenity-block-box"><i class="fa-solid fa-hands-holding-circle"></i><h4>NSS Voluntary Battalion</h4></div>
                 <div class="amenity-block-box"><i class="fa-solid fa-user-ninja"></i><h4>Elite Guest Faculty Guild</h4></div>
                 <div class="amenity-block-box"><i class="fa-solid fa-school-flag"></i><h4>Verified University Center</h4></div>
@@ -768,7 +833,7 @@
 
             <div class="layout-grid-3" style="margin-bottom: 40px;">
                 <div class="image-container-frame">
-                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">NSS Institutional Action Contingent</h4>
+                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">NSS Volunteer Formations Assembly</h4>
                     <img src="WhatsApp Image 2026-06-11 at 10.43.58 AM.jpeg" alt="NSS Volunteer Formations Assembly">
                 </div>
                 <div class="image-container-frame">
@@ -777,7 +842,7 @@
                 </div>
                 <div class="image-container-frame">
                     <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">Cadets Outdoor Drills & Field Exercises</h4>
-                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM.jpeg" alt="Cadets Dynamic Drill Practice Session">
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM.jpeg" alt="Cadets Drill Practice">
                 </div>
             </div>
         </div>
@@ -797,7 +862,7 @@
                 <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.01 AM.jpeg" alt="Administrative Workshops & Forums"> <div class="gallery-blur-overlay"><h5>Administrative Workshops & Forums</h5></div></div>
                 <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.03 AM.jpeg" alt="Campus Student Council Forums"> <div class="gallery-blur-overlay"><h5>Campus Student Council Forums</h5></div></div>
                 <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.56 AM (1).jpeg" alt="Integrated Core Guidance Batches"><div class="gallery-blur-overlay"><h5>Integrated Core Guidance Batches</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.57 AM.jpeg" alt="Merit Student Felicitations"> <div class="gallery-blur-overlay"><h5>Merit Student Felicitations</h5></div></div>
+                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.57 AM.jpeg" alt="Student Merit Felicitations"> <div class="gallery-blur-overlay"><h5>Merit Student Felicitations</h5></div></div>
                 <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.45.02 AM (2).jpeg" alt="Rankers Verification Ceremonies"> <div class="gallery-blur-overlay"><h5>Rankers Verification Ceremonies</h5></div></div>
                 <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.45.04 AM.jpeg" alt="Annual Academic Merit Layouts"> <div class="gallery-blur-overlay"><h5>Annual Academic Merit Layouts</h5></div></div>
             </div>
