@@ -12,11 +12,10 @@
 
     <style>
         :root {
-            /* Civil Services Executive Branding Palette */
-            --purple-dark: #2A1140;     /* Deep Governance Purple */
-            --purple-lite: #6A3993;     /* Royal Lavender Accent */
-            --purple-bg: #F5F1F9;       /* Soft Light Violet Canvas */
-            --gold: #D4AF37;            /* Metallic Champagne Gold */
+            --purple-dark: #2A1140;
+            --purple-lite: #6A3993;
+            --purple-bg: #F5F1F9;
+            --gold: #D4AF37;
             --white: #FFFFFF;
             --text-dark: #1A0F24;       
             --text-muted: #5C5069;
@@ -28,7 +27,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--purple-bg); color: var(--text-dark); line-height: 1.7; padding-top: 145px; }
         
-        /* Premium CSS Animation Engines */
+        /* Smooth CSS Animation Trackers */
         @keyframes fadeInSlideUp {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
@@ -49,11 +48,6 @@
         @keyframes tagFlash {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.7; transform: scale(0.96); background-color: #d32f2f; }
-        }
-
-        @keyframes headlineGlow {
-            0%, 100% { text-shadow: 0 0 8px rgba(214,175,55,0.5); }
-            50% { text-shadow: 0 0 18px rgba(214,175,55,0.85), 0 0 2px #fff; }
         }
 
         @keyframes marqueeAnnouncement {
@@ -164,7 +158,7 @@
         .university-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
         .university-meta-text { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.9); line-height: 1.3; max-width: 180px; }
 
-        /* Navigation Control Panel */
+        /* Navigation Control Panel with Fixed Content Offsets */
         .navigation-control-panel {
             background: var(--white);
             position: fixed;
@@ -212,10 +206,10 @@
         }
         .enroll-action-btn:hover { background: var(--text-dark) !important; color: var(--white) !important; box-shadow: none; }
 
-        /* Fixed Target Routing Layout Alignment Controllers */
+        /* FIXED HEIGHT MANAGEMENT TO PREVENT BLOCKING TITLES */
         .dashboard-view-panel { 
             display: none; 
-            scroll-margin-top: 165px; 
+            scroll-margin-top: 175px; /* Re-aligned to open exactly at title base level */
         }
         #view-home { display: block; }
         
@@ -259,10 +253,10 @@
             border-bottom: 5px solid var(--gold);
             border-radius: 0 0 30px 30px;
         }
-        .academy-hero-billboard h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; font-weight: 700; animation: headlineGlow 3s infinite ease-in-out; }
+        .academy-hero-billboard h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
         .academy-hero-billboard p { font-size: 1.3rem; font-style: italic; opacity: 0.95; }
 
-        /* NEW COLLEGE SPECIFIC ADMISSION ADVERTISING PANEL SHOWCASE */
+        /* Official Structured Admission Advertisement Component on Home */
         .premium-admission-ad-box {
             max-width: 950px;
             margin: 40px auto 25px;
@@ -313,8 +307,7 @@
         
         .card-frame-premium { background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(42,17,64,0.02); margin-bottom: 30px; }
         
-        .image-container-frame { background: var(--white); padding: 25px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(214,175,55,0.25); text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .image-container-frame:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(42, 17, 64, 0.14); }
+        .image-container-frame { background: var(--white); padding: 25px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(214,175,55,0.25); text-align: center; transition: all 0.3s ease; }
         .image-container-frame img { width: 100%; border-radius: var(--radius-md); box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
 
         /* Matrices Tables */
@@ -327,7 +320,7 @@
         .bullet-checks li { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-weight: 600; font-size: 0.98rem; }
         .bullet-checks i { color: var(--gold); }
 
-        /* Founders Executive Profile Module */
+        /* Founders Messages Executive Profiles */
         .spotlight-layout { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(0,0,0,0.02); margin-bottom: 40px; }
         .spotlight-left-panel { background: linear-gradient(135deg, var(--purple-dark), #150821); color: var(--white); padding: 60px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
@@ -343,13 +336,9 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
         }
-        .spotlight-layout:hover .spotlight-portrait { transform: scale(1.05); }
         .spotlight-portrait img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .spotlight-circle-avatar { width: 135px; height: 135px; background: var(--white); border-radius: 50%; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--purple-dark); border: 4px solid var(--gold); transition: transform 0.3s; }
-        .spotlight-layout:hover .spotlight-circle-avatar { transform: scale(1.05); }
+        .spotlight-circle-avatar { width: 135px; height: 135px; background: var(--white); border-radius: 50%; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--purple-dark); border: 4px solid var(--gold); }
         .spotlight-right-panel { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
         .spotlight-right-panel blockquote { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-style: italic; color: var(--purple-dark); position: relative; padding-left: 35px; line-height: 1.6; font-weight: 600; }
         .spotlight-right-panel blockquote::before { content: '“'; font-size: 5.5rem; position: absolute; left: 0; top: -25px; color: var(--gold); opacity: 0.5; }
@@ -380,7 +369,7 @@
         .achiever-node-card h4 { font-size: 1.05rem; color: var(--purple-dark); font-weight: 700; }
         .achiever-node-card p { font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-top: 6px; letter-spacing: 0.5px; }
 
-        /* Gallery Layout Config */
+        /* Gallery Albums Config */
         .gallery-layout-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .gallery-album-card { height: 270px; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); position: relative; border: 3px solid var(--white); transition: all 0.4s ease; }
         .gallery-album-card:hover { transform: scale(1.03); box-shadow: 0 20px 45px rgba(0,0,0,0.15); }
@@ -398,7 +387,7 @@
         .clipper-content-pane h4 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--purple-dark); margin-bottom: 15px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; font-weight: 700; }
         .clipper-content-pane p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 12px; text-align: justify; line-height: 1.6; }
 
-        /* NEW HIGH-END MULTI-COLUMNS ADMISSION WORKSPACE FORMAT */
+        /* THEME-BASED UNIQUE MULTI-COLUMN INTERACTIVE FORM DESIGN */
         .admissions-split-container { display: grid; grid-template-columns: 1fr 1.15fr; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(42, 17, 64, 0.08); background: var(--white); }
         .admissions-left-panel { padding: 50px; background: linear-gradient(135deg, var(--purple-dark), #170924); color: var(--white); border-right: 4px solid var(--gold); }
         .admissions-left-panel h3 { color: var(--gold); font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -411,7 +400,7 @@
         .scholarship-notice-box h4 { font-size: 0.95rem; color: #fff; text-transform: uppercase; margin-bottom: 5px; font-weight: 700; }
         .scholarship-notice-box p { font-size: 0.85rem; opacity: 0.85; line-height: 1.5; }
         
-        /* NEW FORMS CORE VIEW MANAGEMENT SHIELD UI */
+        /* MODERN GLASSMORPHIC COMPONENT ENTRY FIELD CONTROLS */
         .admissions-form-pane { padding: 50px; background: var(--white); }
         .admissions-form-pane h3 { color: var(--purple-dark); font-weight: 800; margin-bottom: 5px; font-size: 1.7rem; text-transform: uppercase; }
         .admissions-form-pane .form-p-sub { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 30px; }
@@ -536,38 +525,36 @@
             </div>
 
             <div class="block-header">
-                <span class="section-tag">Campus Live Sessions</span>
-                <h2 class="block-title">Practical Administrative Training Profiles</h2>
+                <span class="section-tag">Campus Orientation</span>
+                <h2 class="block-title">Administrative Interactive Seminars</h2>
             </div>
             <div class="layout-grid-3" style="margin-bottom: 50px;">
                 <div class="image-container-frame">
-                    <img src="WhatsApp Image 2026-06-11 at 10.43.55 AM.jpeg" alt="Seminar Hall Activity">
-                    <h4 style="font-size: 0.9rem; color: var(--purple-dark); margin-top: 10px; font-weight: 700;">Officer Interactive Seminars</h4>
+                    <img src="WhatsApp Image 2026-06-11 at 10.43.55 AM.jpeg" alt="Academic Orientation Program Seminar">
+                    <h4 style="font-size: 0.9rem; color: var(--purple-dark); margin-top: 10px; font-weight: 700;">Officer Guidance Seminars Layout</h4>
                 </div>
                 <div class="image-container-frame">
-                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM.jpeg" alt="NCC Cadets Drill">
-                    <h4 style="font-size: 0.9rem; color: var(--purple-dark); margin-top: 10px; font-weight: 700;">Disciplined Regiment Training</h4>
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.57 AM (1).jpeg" alt="Officers Guest Sessions Seminar">
+                    <h4 style="font-size: 0.9rem; color: var(--purple-dark); margin-top: 10px; font-weight: 700;">Guest Bureaucrats Interaction</h4>
                 </div>
                 <div class="image-container-frame">
-                    <img src="WhatsApp Image 2026-06-08 at 9.23.09 AM.jpeg" alt="NCC Drill Field">
-                    <h4 style="font-size: 0.9rem; color: var(--purple-dark); margin-top: 10px; font-weight: 700;">Cadets Parade Ground Exercises</h4>
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM.jpeg" alt="Academic Seminars Grid Board">
+                    <h4 style="font-size: 0.9rem; color: var(--purple-dark); margin-top: 10px; font-weight: 700;">Career Horizon Strategy Sessions</h4>
                 </div>
             </div>
 
             <div class="block-header">
-                <span class="section-tag">Our Methodology</span>
+                <span class="section-tag">Academic Frameworks</span>
                 <h2 class="block-title">Why Choose Our Preparatory Matrix?</h2>
             </div>
             <div class="layout-grid-2" style="margin-bottom: 50px;">
                 <div class="card-frame-premium" style="border-left: 5px solid var(--gold);">
                     <h4 style="font-weight: 800; color: var(--purple-dark); margin-bottom: 10px;"><i class="fa-solid fa-graduation-cap"></i> Approved University Regular Degree</h4>
                     <p style="font-size: 0.92rem; color: var(--text-muted);">Fully recognized degree streams affiliated with Kavikulaguru Kalidas Sanskrit University, Ramtek, ensuring perfect regular graduation credentials with full legal tracking validity.</p>
-                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM (1).jpeg" alt="Batch Guidance" style="width:100%; border-radius:8px; margin-top:15px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
                 </div>
                 <div class="card-frame-premium" style="border-left: 5px solid var(--purple-lite);">
                     <h4 style="font-weight: 800; color: var(--purple-dark); margin-bottom: 10px;"><i class="fa-solid fa-book-open-reader"></i> Integrated General Studies Syllabus</h4>
                     <p style="font-size: 0.92rem; color: var(--text-muted);">In-depth, multi-dimensional tracking of Core History, Indian Polity, Administrative Ethics, Economics, and CSAT modules structured for competitive success blueprints.</p>
-                    <img src="WhatsApp Image 2026-06-11 at 10.44.57 AM (1).jpeg" alt="Guest Forums" style="width:100%; border-radius:8px; margin-top:15px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
                 </div>
             </div>
 
@@ -607,18 +594,7 @@
                     </ul>
                 </div>
                 <div>
-                    <img src="WhatsApp Image 2026-06-11 at 10.43.55 AM.jpeg" alt="Active Student Seminar Guidance Arena" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 6px solid var(--white);">
-                </div>
-            </div>
-
-            <div class="layout-grid-2" style="margin-bottom: 40px;">
-                <div class="image-container-frame">
-                    <img src="WhatsApp Image 2026-06-11 at 10.44.58 AM (1).jpeg" alt="Grooming Sessions">
-                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Student Evaluation Seminars</h4>
-                </div>
-                <div class="image-container-frame">
-                    <img src="WhatsApp Image 2026-06-11 at 10.45.01 AM.jpeg" alt="Academic Analysis">
-                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Syllabus Strategies Workshops</h4>
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.58 AM (1).jpeg" alt="Administrative Motivational Seminar Assembly" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 6px solid var(--white);">
                 </div>
             </div>
 
@@ -751,7 +727,7 @@
             </div>
             
             <div class="layout-grid-4" style="margin-bottom: 40px;">
-                <div class="amenity-block-box"><i class="fa-solid fa-shield-halved"></i><h4>NCC Training Regiments</h4></div>
+                <div class="amenity-block-box"><i class="fa-solid fa-shield-halved"></i> Hell<h4>NCC Training Regiments</h4></div>
                 <div class="amenity-block-box"><i class="fa-solid fa-hands-holding-circle"></i><h4>NSS Voluntary Battalion</h4></div>
                 <div class="amenity-block-box"><i class="fa-solid fa-user-ninja"></i><h4>Elite Guest Faculty Guild</h4></div>
                 <div class="amenity-block-box"><i class="fa-solid fa-school-flag"></i><h4>Verified University Center</h4></div>
@@ -767,12 +743,12 @@
 
             <div class="layout-grid-2">
                 <div class="image-container-frame">
-                    <img src="WhatsApp Image 2026-06-11 at 10.45.02 AM (1).jpeg" alt="Mock Test">
-                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Mock Evaluation Room Labs</h4>
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.03 AM (1).jpeg" alt="Strategic Governing Council Meet Panel">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Strategic Governing Meet Panels</h4>
                 </div>
                 <div class="image-container-frame">
-                    <img src="WhatsApp Image 2026-06-11 at 10.45.03 AM (1).jpeg" alt="Review Meet">
-                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Elite Faculty Council Conference Room</h4>
+                    <img src="WhatsApp Image 2026-06-11 at 10.45.03 AM (1).jpeg" alt="Elite Faculty Council Reviews">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Elite Faculty Council Board Reviews</h4>
                 </div>
             </div>
         </div>
@@ -792,7 +768,7 @@
 
             <div class="layout-grid-3" style="margin-bottom: 40px;">
                 <div class="image-container-frame">
-                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">NSS Volunteer Formations Assembly</h4>
+                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">NSS Institutional Action Contingent</h4>
                     <img src="WhatsApp Image 2026-06-11 at 10.43.58 AM.jpeg" alt="NSS Volunteer Formations Assembly">
                 </div>
                 <div class="image-container-frame">
@@ -801,7 +777,7 @@
                 </div>
                 <div class="image-container-frame">
                     <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">Cadets Outdoor Drills & Field Exercises</h4>
-                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM.jpeg" alt="Cadets Drill">
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM.jpeg" alt="Cadets Dynamic Drill Practice Session">
                 </div>
             </div>
         </div>
@@ -815,24 +791,15 @@
             </div>
             
             <div class="gallery-layout-grid" style="margin-bottom: 50px;">
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.43.55 AM.jpeg" alt="Academic Orientation Program"> <div class="gallery-blur-overlay"><h5>Academic Orientation Formations</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.43.57 AM.jpeg" alt="Bureaucrats Welcome"> <div class="gallery-blur-overlay"><h5>Distinguished Bureaucrats Reception Panel</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.43.59 AM.jpeg" alt=" officer guidance"> <div class="gallery-blur-overlay"><h5>UPSC/MPSC Rankers Seminars Channel</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.01 AM (1).jpeg" alt="Test Series Evaluation"> <div class="gallery-blur-overlay"><h5>Weekly Civil Assessment Tests Grid</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.01 AM.jpeg" alt="Assemblies"> <div class="gallery-blur-overlay"><h5>Administrative Workshops & Forums</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.02 AM.jpeg" alt="Civil Assessment"> <div class="gallery-blur-overlay"><h5>Mock Interview Preparation Arena</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.03 AM (1).jpeg" alt="Academic Meetings"> <div class="gallery-blur-overlay"><h5>Strategic Governing Meet Panels</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.03 AM.jpeg" alt="Student Council"> <div class="gallery-blur-overlay"><h5>Campus Student Council Forums</h5></div></div>
+                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.43.57 AM.jpeg" alt="Distinguished Bureaucrats Reception Panel"> <div class="gallery-blur-overlay"><h5>Distinguished Bureaucrats Reception Panel</h5></div></div>
+                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.43.59 AM.jpeg" alt="UPSC/MPSC Rankers Seminars Channel"> <div class="gallery-blur-overlay"><h5>UPSC/MPSC Rankers Seminars Channel</h5></div></div>
+                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.01 AM (1).jpeg" alt="Weekly Civil Assessment Tests Grid"> <div class="gallery-blur-overlay"><h5>Weekly Civil Assessment Tests Grid</h5></div></div>
+                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.01 AM.jpeg" alt="Administrative Workshops & Forums"> <div class="gallery-blur-overlay"><h5>Administrative Workshops & Forums</h5></div></div>
+                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.03 AM.jpeg" alt="Campus Student Council Forums"> <div class="gallery-blur-overlay"><h5>Campus Student Council Forums</h5></div></div>
                 <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.56 AM (1).jpeg" alt="Integrated Core Guidance Batches"><div class="gallery-blur-overlay"><h5>Integrated Core Guidance Batches</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.56 AM.jpeg" alt="Academic Seminars Grid"> <div class="gallery-blur-overlay"><h5>Strategic Career Briefing Sessions</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.57 AM (1).jpeg" alt="Officers Guest Sessions"><div class="gallery-blur-overlay"><h5>Guest Administrative Forums</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.57 AM.jpeg" alt="Student Merit Felicitations"> <div class="gallery-blur-overlay"><h5>Merit Student Felicitations</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.58 AM (1).jpeg" alt="Officer Motivation Forums"><div class="gallery-blur-overlay"><h5>Administrative Motivational Assemblies</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.45.01 AM.jpeg" alt="Weekly Strategy Forums"> <div class="gallery-blur-overlay"><h5>Weekly Group Syllabus Analytics</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.45.02 AM (1).jpeg" alt="Civil Assessment Matrix"><div class="gallery-blur-overlay"><h5>Officer Mock Interview Drills</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.45.02 AM (2).jpeg" alt="Rankers Merit Panel"> <div class="gallery-blur-overlay"><h5>Rankers Verification Ceremonies</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.45.03 AM (1).jpeg" alt="Interactive Faculty Boards"><div class="gallery-blur-overlay"><h5>Elite Faculty Council Reviews</h5></div></div>
-                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.45.04 AM.jpeg" alt="Academy Milestone Felicitations"> <div class="gallery-blur-overlay"><h5>Annual Academic Merit Layouts</h5></div></div>
+                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.44.57 AM.jpeg" alt="Merit Student Felicitations"> <div class="gallery-blur-overlay"><h5>Merit Student Felicitations</h5></div></div>
+                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.45.02 AM (2).jpeg" alt="Rankers Verification Ceremonies"> <div class="gallery-blur-overlay"><h5>Rankers Verification Ceremonies</h5></div></div>
+                <div class="gallery-album-card"><img src="WhatsApp Image 2026-06-11 at 10.45.04 AM.jpeg" alt="Annual Academic Merit Layouts"> <div class="gallery-blur-overlay"><h5>Annual Academic Merit Layouts</h5></div></div>
             </div>
 
             <div class="block-header" style="margin-top: 60px;">
@@ -984,13 +951,13 @@
                         <li><i class="fa-solid fa-circle-check"></i> Higher Secondary Certificate (12th Marksheet)</li>
                         <li><i class="fa-solid fa-circle-check"></i> Original Institutional Leaving/Transfer Certificate (TC)</li>
                         <li><i class="fa-solid fa-circle-check"></i> Government Certified National Aadhaar Card Identity</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Cast & Validity Certificate (For reservation criteria claims)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Caste & Validity Certificate (For reservation criteria claims)</li>
                         <li><i class="fa-solid fa-circle-check"></i> Valid Current Income Certificate Document</li>
                     </ul>
                     
                     <div class="scholarship-notice-box">
-                        <h4><i class="fa-solid fa-hand-holding-dollar"></i> Government Scholarships Active</h4>
-                        <p>100% full educational scholarship and fee relaxation regulations are executed seamlessly for eligible reserved category layouts (SC / ST / OBC / VJNT) following official Government of Maharashtra protocols.</p>
+                        <h4><i class="fa-solid fa-hand-holding-dollar"></i> Government Scholarships Granted</h4>
+                        <p>100% full financial educational scholarship and fee relaxation regulations are executed seamlessly for eligible backward class Reserved category layouts (SC / ST / OBC / VJNT) following official Government of Maharashtra protocols.</p>
                     </div>
                 </div>
                 
@@ -1038,6 +1005,21 @@
                         
                         <button type="submit" class="tab-trigger-node enroll-action-btn" style="width:100%; border:none; padding:15px; cursor:pointer; text-align:center; font-size: 0.9rem; border-radius: 6px; margin-top: 10px;">Transmit Query Parameters <i class="fa-solid fa-paper-plane"></i></button>
                     </form>
+                </div>
+            </div>
+
+            <div class="block-header">
+                <span class="section-tag">Grooming Matrices</span>
+                <h2 class="block-title">Officer Personality Assessment Training Rounds</h2>
+            </div>
+            <div class="layout-grid-2" style="margin-bottom: 50px;">
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.02 AM.jpeg" alt="Mock Interview Evaluation Arena">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Executive Panel Real Mock Interview Drills</h4>
+                </div>
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.45.02 AM (1).jpeg" alt="Officer Mock Interview Assessment Setup">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Individual Capability Profile Screening</h4>
                 </div>
             </div>
 
