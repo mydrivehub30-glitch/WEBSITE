@@ -26,18 +26,80 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--purple-bg); color: var(--text-dark); line-height: 1.7; padding-top: 175px; }
+        body { background-color: var(--purple-bg); color: var(--text-dark); line-height: 1.7; padding-top: 145px; }
         
+        /* Premium CSS Animation Engines */
+        @keyframes fadeInSlideUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulseGlowEffect {
+            0% { box-shadow: 0 0 0 0 rgba(214, 175, 55, 0.6); }
+            70% { box-shadow: 0 0 0 12px rgba(214, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(214, 175, 55, 0); }
+        }
+
+        @keyframes premiumAdGlow {
+            0% { border-color: var(--gold); box-shadow: 0 10px 30px rgba(42, 17, 64, 0.15); }
+            50% { border-color: #ff5252; box-shadow: 0 15px 45px rgba(229, 57, 53, 0.4); }
+            100% { border-color: var(--gold); box-shadow: 0 10px 30px rgba(42, 17, 64, 0.15); }
+        }
+
+        @keyframes tagFlash {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.96); background-color: #d32f2f; }
+        }
+
+        @keyframes headlineGlow {
+            0%, 100% { text-shadow: 0 0 8px rgba(214,175,55,0.5); }
+            50% { text-shadow: 0 0 18px rgba(214,175,55,0.85), 0 0 2px #fff; }
+        }
+
+        @keyframes marqueeAnnouncement {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @keyframes hoverCardFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Top Animated Announcement Ticker Bar */
+        .top-ticker-bar {
+            background: #1e0a30;
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 0;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            border-bottom: 1px solid rgba(214, 175, 55, 0.3);
+        }
+        .ticker-text {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: marqueeAnnouncement 25s linear infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         /* Fixed Header Setup */
         header {
             background: var(--purple-dark);
             position: fixed;
             width: 100%;
-            top: 0;
+            top: 30px; 
             left: 0;
             z-index: 9999;
             border-bottom: 2px solid rgba(255,255,255,0.1);
-            height: 95px;
+            height: 75px;
             display: flex;
             align-items: center;
         }
@@ -54,11 +116,10 @@
 
         .brand-link { display: flex; align-items: center; gap: 15px; text-decoration: none; }
         
-        /* College Logo Frame */
         .logo-frame-main {
             background: var(--white);
-            width: 75px;
-            height: 75px;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
             padding: 2px;
             border: 2px solid var(--gold);
@@ -66,18 +127,20 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            transition: transform 0.4s ease;
         }
+        .brand-link:hover .logo-frame-main { transform: rotate(360deg); }
         .logo-frame-main img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
 
         .brand-titles h1 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--white);
             font-weight: 800;
             text-transform: uppercase;
             line-height: 1.2;
             letter-spacing: 0.3px;
         }
-        .brand-titles p { font-size: 0.75rem; color: var(--gold); font-weight: 700; text-transform: uppercase; }
+        .brand-titles p { font-size: 0.7rem; color: var(--gold); font-weight: 700; text-transform: uppercase; }
 
         .university-shield {
             display: flex;
@@ -89,8 +152,8 @@
         }
         .university-logo-circle {
             background: var(--white);
-            width: 55px;
-            height: 55px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -99,19 +162,19 @@
             overflow: hidden;
         }
         .university-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
-        .university-meta-text { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.9); line-height: 1.3; max-width: 180px; }
+        .university-meta-text { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.9); line-height: 1.3; max-width: 180px; }
 
         /* Navigation Control Panel */
         .navigation-control-panel {
             background: var(--white);
             position: fixed;
-            top: 95px; 
+            top: 105px; 
             left: 0;
             width: 100%;
             z-index: 9998;
             border-bottom: 4px solid var(--purple-dark);
             box-shadow: 0 8px 20px rgba(42, 17, 64, 0.06);
-            padding: 8px 0;
+            padding: 6px 0;
             display: flex;
             justify-content: center;
         }
@@ -129,7 +192,7 @@
         
         .tab-trigger-node {
             display: block;
-            padding: 10px 20px;
+            padding: 8px 16px;
             color: var(--purple-dark);
             font-weight: 700;
             font-size: 0.8rem;
@@ -137,74 +200,124 @@
             border-radius: 4px;
             text-decoration: none;
             letter-spacing: 0.3px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
-        .tab-trigger-node:hover { background: rgba(42, 17, 64, 0.05); }
+        .tab-trigger-node:hover { background: rgba(42, 17, 64, 0.08); transform: translateY(-1px); }
         
-        .enroll-action-btn { background: var(--gold) !important; color: var(--purple-dark) !important; font-weight: 800; }
-        .enroll-action-btn:hover { background: var(--text-dark) !important; color: var(--white) !important; }
+        .enroll-action-btn { 
+            background: var(--gold) !important; 
+            color: var(--purple-dark) !important; 
+            font-weight: 800; 
+            animation: pulseGlowEffect 2s infinite; 
+        }
+        .enroll-action-btn:hover { background: var(--text-dark) !important; color: var(--white) !important; box-shadow: none; }
 
-        /* Pure CSS Tab Routing Engine */
-        .dashboard-view-panel { display: none; }
+        /* Fixed Target Routing Layout Alignment Controllers */
+        .dashboard-view-panel { 
+            display: none; 
+            scroll-margin-top: 165px; 
+        }
         #view-home { display: block; }
         
-        body:has(#view-home:target) #view-home { display: block; }
+        body:has(#view-home:target) #view-home { display: block; animation: fadeInSlideUp 0.4s ease-out; }
         body:has(#view-home:target) .tab-trigger-node[href="#view-home"] { background: var(--purple-dark); color: var(--white); }
         
         body:has(#view-about:target) #view-home { display: none; }
-        body:has(#view-about:target) #view-about { display: block; }
+        body:has(#view-about:target) #view-about { display: block; animation: fadeInSlideUp 0.4s ease-out; }
         body:has(#view-about:target) .tab-trigger-node[href="#view-about"] { background: var(--purple-dark); color: var(--white); }
         
         body:has(#view-founder:target) #view-home { display: none; }
-        body:has(#view-founder:target) #view-founder { display: block; }
+        body:has(#view-founder:target) #view-founder { display: block; animation: fadeInSlideUp 0.4s ease-out; }
         body:has(#view-founder:target) .tab-trigger-node[href="#view-founder"] { background: var(--purple-dark); color: var(--white); }
         
         body:has(#view-courses:target) #view-home { display: none; }
-        body:has(#view-courses:target) #view-courses { display: block; }
+        body:has(#view-courses:target) #view-courses { display: block; animation: fadeInSlideUp 0.4s ease-out; }
         body:has(#view-courses:target) .tab-trigger-node[href="#view-courses"] { background: var(--purple-dark); color: var(--white); }
         
         body:has(#view-facilities:target) #view-home { display: none; }
-        body:has(#view-facilities:target) #view-facilities { display: block; }
+        body:has(#view-facilities:target) #view-facilities { display: block; animation: fadeInSlideUp 0.4s ease-out; }
         body:has(#view-facilities:target) .tab-trigger-node[href="#view-facilities"] { background: var(--purple-dark); color: var(--white); }
         
         body:has(#view-regiment:target) #view-home { display: none; }
-        body:has(#view-regiment:target) #view-regiment { display: block; }
+        body:has(#view-regiment:target) #view-regiment { display: block; animation: fadeInSlideUp 0.4s ease-out; }
         body:has(#view-regiment:target) .tab-trigger-node[href="#view-regiment"] { background: var(--purple-dark); color: var(--white); }
         
         body:has(#view-gallery:target) #view-home { display: none; }
-        body:has(#view-gallery:target) #view-gallery { display: block; }
+        body:has(#view-gallery:target) #view-gallery { display: block; animation: fadeInSlideUp 0.4s ease-out; }
         body:has(#view-gallery:target) .tab-trigger-node[href="#view-gallery"] { background: var(--purple-dark); color: var(--white); }
         
         body:has(#view-admission:target) #view-home { display: none; }
-        body:has(#view-admission:target) #view-admission { display: block; }
+        body:has(#view-admission:target) #view-admission { display: block; animation: fadeInSlideUp 0.4s ease-out; }
         body:has(#view-admission:target) .tab-trigger-node[href="#view-admission"] { background: var(--purple-dark); color: var(--white); }
 
-        /* Billboard Premium Card Styling */
+        /* Billboard Section Layout */
         .academy-hero-billboard {
             background: linear-gradient(135deg, rgba(42, 17, 64, 0.94), rgba(23, 10, 38, 0.96)), url('WhatsApp Image 2026-05-25 at 11.14.01 PM.jpg') no-repeat center center/cover;
-            padding: 130px 20px;
+            padding: 85px 20px;
             text-align: center;
             color: var(--white);
             border-bottom: 5px solid var(--gold);
             border-radius: 0 0 30px 30px;
         }
-        .academy-hero-billboard h2 { font-family: 'Playfair Display', serif; font-size: 3.3rem; color: var(--gold); text-transform: uppercase; margin-bottom: 15px; font-weight: 700; }
-        .academy-hero-billboard p { font-size: 1.4rem; font-style: italic; opacity: 0.95; }
+        .academy-hero-billboard h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; font-weight: 700; animation: headlineGlow 3s infinite ease-in-out; }
+        .academy-hero-billboard p { font-size: 1.3rem; font-style: italic; opacity: 0.95; }
 
-        .content-container { max-width: 1340px; margin: 0 auto; padding: 40px 20px 80px; }
-        .block-header { margin-bottom: 45px; border-left: 5px solid var(--gold); padding-left: 20px; }
-        .block-title { font-size: 2.2rem; color: var(--purple-dark); font-weight: 800; text-transform: uppercase; }
+        /* NEW COLLEGE SPECIFIC ADMISSION ADVERTISING PANEL SHOWCASE */
+        .premium-admission-ad-box {
+            max-width: 950px;
+            margin: 40px auto 25px;
+            background: linear-gradient(135deg, #2A1140, #170924);
+            border: 4px solid var(--gold);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            animation: premiumAdGlow 3.5s infinite ease-in-out, hoverCardFloat 6s infinite ease-in-out;
+        }
+        .premium-admission-ad-box::before {
+            content: 'BATCH 2026-27';
+            position: absolute;
+            top: 18px; right: -38px;
+            background: #e53935;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 5px 35px;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .ad-info-side { text-align: left; color: #fff; }
+        .ad-info-side h4 { font-size: 2.1rem; color: var(--gold); font-weight: 800; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; }
+        .ad-info-side h5 { font-size: 1.1rem; color: var(--white); margin-bottom: 15px; font-weight: 600; font-style: italic; }
+        .ad-info-side .flashing-badge { display: inline-block; background: #e53935; padding: 5px 14px; font-size: 0.75rem; font-weight: 800; border-radius: 4px; letter-spacing: 0.5px; animation: tagFlash 1.6s infinite ease-in-out; margin-bottom: 15px; text-transform: uppercase; }
+        .ad-info-side p { font-size: 0.9rem; opacity: 0.85; line-height: 1.6; text-align: justify; }
+        .ad-action-side { text-align: center; background: rgba(255,255,255,0.04); padding: 25px; border-radius: var(--radius-md); border: 1px dashed rgba(214,175,55,0.3); }
+        .ad-action-side .ad-highlight-title { font-size: 0.85rem; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .ad-action-side ul { list-style: none; text-align: left; margin-bottom: 25px; padding-left: 5px; }
+        .ad-action-side ul li { font-size: 0.88rem; color: #fff; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .ad-action-side ul li i { color: #25D366; font-size: 1rem; }
+
+        .content-container { max-width: 1340px; margin: 0 auto; padding: 20px 20px 60px; }
+        .block-header { margin-bottom: 40px; border-left: 5px solid var(--gold); padding-left: 20px; }
+        .block-title { font-size: 2.1rem; color: var(--purple-dark); font-weight: 800; text-transform: uppercase; }
         .block-subtitle { color: var(--purple-lite); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; margin-top: 4px; letter-spacing: 0.5px; }
 
-        .layout-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .layout-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
         .layout-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .layout-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         
-        .card-frame-premium { background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(42,17,64,0.02); }
-        .image-container-frame { background: var(--white); padding: 25px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(214,175,55,0.25); text-align: center; }
+        .card-frame-premium { background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(42,17,64,0.02); margin-bottom: 30px; }
+        
+        .image-container-frame { background: var(--white); padding: 25px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(214,175,55,0.25); text-align: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .image-container-frame:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(42, 17, 64, 0.14); }
         .image-container-frame img { width: 100%; border-radius: var(--radius-md); box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
 
-        /* Matrix Tables */
+        /* Matrices Tables */
         .data-table-matrix { width: 100%; border-collapse: collapse; margin-top: 30px; background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); }
         .data-table-matrix th { background: var(--purple-dark); color: var(--white); padding: 16px 20px; text-align: left; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; }
         .data-table-matrix td { padding: 16px 20px; border-bottom: 1px solid #E2E8F0; color: var(--text-dark); font-size: 0.92rem; }
@@ -214,7 +327,7 @@
         .bullet-checks li { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-weight: 600; font-size: 0.98rem; }
         .bullet-checks i { color: var(--gold); }
 
-        /* Founders View Card Setup */
+        /* Founders Executive Profile Module */
         .spotlight-layout { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(0,0,0,0.02); margin-bottom: 40px; }
         .spotlight-left-panel { background: linear-gradient(135deg, var(--purple-dark), #150821); color: var(--white); padding: 60px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
@@ -230,25 +343,29 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
         }
+        .spotlight-layout:hover .spotlight-portrait { transform: scale(1.05); }
         .spotlight-portrait img { width: 100%; height: 100%; object-fit: cover; }
         
-        .spotlight-circle-avatar { width: 135px; height: 135px; background: var(--white); border-radius: 50%; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--purple-dark); border: 4px solid var(--gold); }
+        .spotlight-circle-avatar { width: 135px; height: 135px; background: var(--white); border-radius: 50%; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--purple-dark); border: 4px solid var(--gold); transition: transform 0.3s; }
+        .spotlight-layout:hover .spotlight-circle-avatar { transform: scale(1.05); }
         .spotlight-right-panel { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
         .spotlight-right-panel blockquote { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-style: italic; color: var(--purple-dark); position: relative; padding-left: 35px; line-height: 1.6; font-weight: 600; }
         .spotlight-right-panel blockquote::before { content: '“'; font-size: 5.5rem; position: absolute; left: 0; top: -25px; color: var(--gold); opacity: 0.5; }
 
-        /* Academic Node Cards */
-        .program-node-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border-bottom: 5px solid var(--purple-lite); display: flex; flex-direction: column; height: 100%; }
+        /* Program Cards */
+        .program-node-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border-bottom: 5px solid var(--purple-lite); display: flex; flex-direction: column; height: 100%; transition: all 0.3s ease; }
+        .program-node-card:hover { transform: translateY(-8px); border-bottom-color: var(--gold); }
         .program-header-panel { background: linear-gradient(135deg, var(--purple-dark), #1A0B28); color: var(--white); padding: 35px 25px; text-align: center; }
         .program-header-panel h3 { font-size: 1.8rem; font-weight: 800; }
         .program-header-panel p { color: var(--gold); font-weight: 700; margin-top: 4px; font-size: 0.9rem; text-transform: uppercase; }
         .program-body-panel { padding: 35px 30px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         .program-body-panel p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; }
 
-        .amenity-block-box { background: var(--white); padding: 35px 25px; border-radius: var(--radius-md); text-align: center; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(42,17,64,0.02); transition: all 0.3s ease; }
-        .amenity-block-box:hover { background: var(--purple-dark); color: var(--white); transform: translateY(-4px); }
-        .amenity-block-box i { font-size: 2.4rem; color: var(--gold); margin-bottom: 18px; display: inline-block; }
+        .amenity-block-box { background: var(--white); padding: 35px 25px; border-radius: var(--radius-md); text-align: center; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(42,17,64,0.02); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .amenity-block-box:hover { background: var(--purple-dark); color: var(--white); transform: scale(1.05); }
+        .amenity-block-box i { font-size: 2.4rem; color: var(--gold); margin-bottom: 18px; display: inline-block; transition: color 0.3s; }
         .amenity-block-box:hover i { color: var(--white); }
         .amenity-block-box h4 { font-size: 1rem; font-weight: 700; }
 
@@ -256,41 +373,54 @@
         .command-banner-canvas h3 { font-family: 'Playfair Display', serif; font-size: 2.6rem; color: var(--gold); margin-bottom: 15px; text-transform: uppercase; font-weight: 700; }
 
         .achievers-matrix-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
-        .achiever-node-card { background: var(--white); border-radius: var(--radius-md); padding: 30px 20px; text-align: center; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border-top: 4px solid var(--purple-dark); }
+        .achiever-node-card { background: var(--white); border-radius: var(--radius-md); padding: 30px 20px; text-align: center; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border-top: 4px solid var(--purple-dark); transition: all 0.3s; }
+        .achiever-node-card:hover { transform: translateY(-5px); border-top-color: var(--gold); }
         .achiever-photo-circle { width: 90px; height: 90px; border-radius: 50%; background: var(--purple-bg); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; color: var(--purple-lite); border: 2px solid var(--gold); overflow: hidden;}
         .achiever-photo-circle img { width: 100%; height: 100%; object-fit: cover; }
         .achiever-node-card h4 { font-size: 1.05rem; color: var(--purple-dark); font-weight: 700; }
         .achiever-node-card p { font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-top: 6px; letter-spacing: 0.5px; }
 
-        /* Gallery Layout Display */
+        /* Gallery Layout Config */
         .gallery-layout-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .gallery-album-card { height: 270px; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); position: relative; border: 3px solid var(--white); }
-        .gallery-album-card img { width: 100%; height: 100%; object-fit: cover; }
-        .gallery-blur-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(42, 17, 64, 0.95), transparent 70%); display: flex; align-items: flex-end; padding: 25px; opacity: 1; }
+        .gallery-album-card { height: 270px; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); position: relative; border: 3px solid var(--white); transition: all 0.4s ease; }
+        .gallery-album-card:hover { transform: scale(1.03); box-shadow: 0 20px 45px rgba(0,0,0,0.15); }
+        .gallery-album-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .gallery-album-card:hover img { transform: scale(1.08); }
+        .gallery-blur-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(42, 17, 64, 0.95), transparent 70%); display: flex; align-items: flex-end; padding: 25px; opacity: 1; transition: background 0.3s; }
+        .gallery-album-card:hover .gallery-blur-overlay { background: linear-gradient(to top, rgba(106, 57, 147, 0.95), transparent 70%); }
         .gallery-blur-overlay h5 { color: var(--white); font-size: 1.05rem; font-weight: 600; }
 
-        /* Newspaper Press Clipper Config Grid */
-        .news-clipper-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); margin-top: 40px; border: 1px solid rgba(0,0,0,0.03); }
+        /* Press News Clipper Styling */
+        .news-clipper-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); margin-top: 40px; border: 1px solid rgba(0,0,0,0.03); transition: transform 0.3s ease; }
+        .news-clipper-grid:hover { transform: translateY(-5px); }
         .clipper-img-frame { border-radius: var(--radius-md); overflow: hidden; border: 2px solid var(--purple-bg); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .clipper-img-frame img { width: 100%; height: auto; display: block; }
         .clipper-content-pane h4 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--purple-dark); margin-bottom: 15px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; font-weight: 700; }
         .clipper-content-pane p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 12px; text-align: justify; line-height: 1.6; }
 
-        .admissions-split-container { display: grid; grid-template-columns: 1fr 1.1fr; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); }
-        .admissions-left-panel { padding: 55px; background: linear-gradient(135deg, var(--purple-dark), #170924); color: var(--white); }
-        .admissions-left-panel h3 { color: var(--gold); font-size: 2rem; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; }
-        .document-checklist-node { list-style: none; margin-top: 30px; }
-        .document-checklist-node h4 { color: var(--gold); margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .document-checklist-node li { margin-bottom: 14px; display: flex; align-items: center; gap: 12px; font-size: 0.98rem; font-weight: 600; }
-        .document-checklist-node i { color: var(--gold); font-size: 1.1rem; }
-        .scholarship-notice-box { background: rgba(255,255,255,0.07); padding: 25px; border-left: 4px solid var(--gold); border-radius: 4px; margin-top: 35px; }
+        /* NEW HIGH-END MULTI-COLUMNS ADMISSION WORKSPACE FORMAT */
+        .admissions-split-container { display: grid; grid-template-columns: 1fr 1.15fr; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(42, 17, 64, 0.08); background: var(--white); }
+        .admissions-left-panel { padding: 50px; background: linear-gradient(135deg, var(--purple-dark), #170924); color: var(--white); border-right: 4px solid var(--gold); }
+        .admissions-left-panel h3 { color: var(--gold); font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+        .admissions-left-panel .panel-p-intro { font-size: 0.95rem; opacity: 0.85; margin-bottom: 30px; }
+        .document-checklist-node { list-style: none; }
+        .document-checklist-node h4 { color: var(--gold); margin-bottom: 15px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px dashed rgba(214,175,55,0.4); padding-bottom: 8px; }
+        .document-checklist-node li { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; font-size: 0.9rem; font-weight: 500; opacity: 0.95; }
+        .document-checklist-node i { color: #25D366; font-size: 1rem; }
+        .scholarship-notice-box { background: rgba(255,255,255,0.05); padding: 20px; border-left: 4px solid #e53935; border-radius: 4px; margin-top: 35px; }
+        .scholarship-notice-box h4 { font-size: 0.95rem; color: #fff; text-transform: uppercase; margin-bottom: 5px; font-weight: 700; }
+        .scholarship-notice-box p { font-size: 0.85rem; opacity: 0.85; line-height: 1.5; }
         
-        .admissions-form-pane { padding: 55px; background: var(--white); }
-        .admissions-form-pane h3 { color: var(--purple-dark); font-weight: 800; margin-bottom: 30px; font-size: 1.8rem; }
-        .form-row-group { margin-bottom: 22px; }
-        .form-row-group label { display: block; font-weight: 700; color: var(--purple-dark); margin-bottom: 8px; font-size: 0.88rem; text-transform: uppercase; }
-        .form-input-ctrl { width: 100%; padding: 14px 18px; border: 2px solid var(--purple-bg); border-radius: 8px; outline: none; background-color: var(--purple-bg); font-size: 0.95rem; font-weight: 500; }
-        .form-input-ctrl:focus { border-color: var(--purple-lite); background-color: var(--white); }
+        /* NEW FORMS CORE VIEW MANAGEMENT SHIELD UI */
+        .admissions-form-pane { padding: 50px; background: var(--white); }
+        .admissions-form-pane h3 { color: var(--purple-dark); font-weight: 800; margin-bottom: 5px; font-size: 1.7rem; text-transform: uppercase; }
+        .admissions-form-pane .form-p-sub { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 30px; }
+        .form-row-group { margin-bottom: 20px; text-align: left; }
+        .form-row-group label { display: block; font-weight: 700; color: var(--purple-dark); margin-bottom: 6px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-input-ctrl { width: 100%; padding: 12px 16px; border: 2px solid #E2E8F0; border-radius: 6px; outline: none; background-color: #F8FAFC; font-size: 0.92rem; font-weight: 600; color: var(--text-dark); transition: all 0.3s ease; }
+        .form-input-ctrl::placeholder { color: #94A3B8; font-weight: 500; }
+        .form-input-ctrl:focus { border-color: var(--purple-lite); background-color: var(--white); box-shadow: 0 0 0 4px rgba(106, 57, 147, 0.1); }
+        select.form-input-ctrl { cursor: pointer; color: var(--text-dark); }
 
         .office-grid-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
         .office-details-card { background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border-left: 5px solid var(--gold); }
@@ -299,27 +429,34 @@
         .iframe-map-frame { border-radius: var(--radius-lg); overflow: hidden; height: 380px; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 5px solid var(--white); background: #E2E8F0; }
 
         footer { background: #12071C; color: rgba(255,255,255,0.7); padding: 60px 0 30px; border-top: 4px solid var(--gold); text-align: center; font-size: 0.95rem; }
-        .whatsapp-fixed-action { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; box-shadow: 0 10px 30px rgba(37,211,102,0.3); z-index: 9999; text-decoration: none; }
-
+        
         @media (max-width: 1120px) {
-            header { height: auto; padding: 15px 0; position: relative; }
+            header { height: auto; padding: 15px 0; position: fixed; top: 30px; }
             .nav-wrapper { flex-direction: column; gap: 12px; text-align: center; }
             .university-shield { border-left: none; padding-left: 0; margin-top: 5px; }
-            .navigation-control-panel { position: static; margin-top: 0; padding: 10px 0; }
-            body { padding-top: 20px; }
+            .navigation-control-panel { position: fixed; top: 195px; padding: 10px 0; }
+            body { padding-top: 255px; }
             .tabs-row-list { flex-direction: column; width: 100%; }
             .tab-trigger-node { width: 100%; text-align: center; }
-            .dashboard-view-panel { margin-top: 20px; }
+            .dashboard-view-panel { scroll-margin-top: 270px; }
         }
 
         @media (max-width: 768px) {
-            .layout-grid-2, .layout-grid-3, .layout-grid-4, .achievers-matrix-grid, .gallery-layout-grid, .admissions-split-container, .office-grid-layout, .spotlight-layout, .news-clipper-grid { grid-template-columns: 1fr; }
+            .layout-grid-2, .layout-grid-3, .layout-grid-4, .achievers-matrix-grid, .gallery-layout-grid, .admissions-split-container, .office-grid-layout, .spotlight-layout { grid-template-columns: 1fr; }
+            .premium-admission-ad-box { grid-template-columns: 1fr; text-align: center; padding: 25px; }
+            .ad-info-side { text-align: center; }
+            .ad-info-side h4 { font-size: 1.8rem; }
+            .admissions-split-container { grid-template-columns: 1fr; }
+            .admissions-left-panel { border-right: none; border-bottom: 4px solid var(--gold); padding: 35px; }
+            .admissions-form-pane { padding: 35px; }
         }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/918308219191" class="whatsapp-fixed-action" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="top-ticker-bar">
+        <span class="ticker-text">⚡ Admissions open for academic session 2026-2027 • full government scholarships available for reserved categories • initialize enrollment query tracking now ⚡</span>
+    </div>
 
     <header>
         <div class="nav-wrapper">
@@ -369,10 +506,74 @@
             </div>
         </section>
 
+        <div class="premium-admission-ad-box">
+            <div class="ad-info-side">
+                <span class="flashing-badge"><i class="fa-solid fa-graduation-cap"></i> Academic Session 2026 - 2027</span>
+                <h4>College Admission Open</h4>
+                <h5>Officer Cadets Integrated Preparatory Track</h5>
+                <p>Applications are formally invited for regular university degree courses integrated seamlessly with structural coaching for UPSC, MPSC, Banking, and Defense examinations. Learn under serving senior mentors and retired civil officers.</p>
+            </div>
+            <div class="ad-action-side">
+                <div class="ad-highlight-title">Core Streams Open</div>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i> B.A. Civil Service (Marathi Medium)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> M.A. Public Admin (Marathi Medium)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> P.G.D.C.A. Diploma (English Medium)</li>
+                </ul>
+                <a href="#view-admission" class="tab-trigger-node enroll-action-btn" style="padding: 12px 25px; font-size: 0.85rem; font-weight: 700; text-align: center; width: 100%;">Online Application Portal <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
         <div class="content-container">
+            <div class="card-frame-premium" style="border-top: 4px solid var(--purple-dark); margin-top: 10px;">
+                <h3 style="color: var(--purple-dark); font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase;">Central India's Pioneer Civil Services Preparatory Hub</h3>
+                <p style="color: var(--text-muted); text-align: justify; margin-bottom: 15px;">
+                    Dr. Vivek Shinde Administrative Services College, Bhadrawati is not just a traditional academic center; it is an elite incubation ground designed to shape the future bureaucrats of our nation. Our objective is to bridge the educational gap for rural and semi-urban talents by providing an environment built on strict administrative discipline, daily comprehensive evaluation tracking, and direct training panels with seasoned administrative officers.
+                </p>
+                <p style="color: var(--text-dark); font-weight: 600; margin-bottom: 20px;">
+                    Synthesizing regular undergraduate streams with targeted UPSC (Union Public Service Commission) and MPSC (Maharashtra Public Service Commission) preparation models, we provide a structured multi-dimensional path right from graduation day.
+                </p>
+            </div>
+
             <div class="block-header">
-                <span class="section-tag">Prospectus Notification Portfolio</span>
-                <h2 class="block-title">Academic Campaign Banners</h2>
+                <span class="section-tag">Campus Live Sessions</span>
+                <h2 class="block-title">Practical Administrative Training Profiles</h2>
+            </div>
+            <div class="layout-grid-3" style="margin-bottom: 50px;">
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.43.55 AM.jpeg" alt="Seminar Hall Activity">
+                    <h4 style="font-size: 0.9rem; color: var(--purple-dark); margin-top: 10px; font-weight: 700;">Officer Interactive Seminars</h4>
+                </div>
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM.jpeg" alt="NCC Cadets Drill">
+                    <h4 style="font-size: 0.9rem; color: var(--purple-dark); margin-top: 10px; font-weight: 700;">Disciplined Regiment Training</h4>
+                </div>
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-08 at 9.23.09 AM.jpeg" alt="NCC Drill Field">
+                    <h4 style="font-size: 0.9rem; color: var(--purple-dark); margin-top: 10px; font-weight: 700;">Cadets Parade Ground Exercises</h4>
+                </div>
+            </div>
+
+            <div class="block-header">
+                <span class="section-tag">Our Methodology</span>
+                <h2 class="block-title">Why Choose Our Preparatory Matrix?</h2>
+            </div>
+            <div class="layout-grid-2" style="margin-bottom: 50px;">
+                <div class="card-frame-premium" style="border-left: 5px solid var(--gold);">
+                    <h4 style="font-weight: 800; color: var(--purple-dark); margin-bottom: 10px;"><i class="fa-solid fa-graduation-cap"></i> Approved University Regular Degree</h4>
+                    <p style="font-size: 0.92rem; color: var(--text-muted);">Fully recognized degree streams affiliated with Kavikulaguru Kalidas Sanskrit University, Ramtek, ensuring perfect regular graduation credentials with full legal tracking validity.</p>
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM (1).jpeg" alt="Batch Guidance" style="width:100%; border-radius:8px; margin-top:15px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+                </div>
+                <div class="card-frame-premium" style="border-left: 5px solid var(--purple-lite);">
+                    <h4 style="font-weight: 800; color: var(--purple-dark); margin-bottom: 10px;"><i class="fa-solid fa-book-open-reader"></i> Integrated General Studies Syllabus</h4>
+                    <p style="font-size: 0.92rem; color: var(--text-muted);">In-depth, multi-dimensional tracking of Core History, Indian Polity, Administrative Ethics, Economics, and CSAT modules structured for competitive success blueprints.</p>
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.57 AM (1).jpeg" alt="Guest Forums" style="width:100%; border-radius:8px; margin-top:15px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+                </div>
+            </div>
+
+            <div class="block-header">
+                <span class="section-tag">Prospectus Handbooks</span>
+                <h2 class="block-title">Institutional Prospectus Maps & Notifications</h2>
             </div>
             <div class="layout-grid-2">
                 <div class="image-container-frame">
@@ -407,6 +608,17 @@
                 </div>
                 <div>
                     <img src="WhatsApp Image 2026-06-11 at 10.43.55 AM.jpeg" alt="Active Student Seminar Guidance Arena" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 6px solid var(--white);">
+                </div>
+            </div>
+
+            <div class="layout-grid-2" style="margin-bottom: 40px;">
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.58 AM (1).jpeg" alt="Grooming Sessions">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Student Evaluation Seminars</h4>
+                </div>
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.45.01 AM.jpeg" alt="Academic Analysis">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Syllabus Strategies Workshops</h4>
                 </div>
             </div>
 
@@ -472,7 +684,7 @@
                     </div>
                     <div class="program-body-panel">
                         <p>A flagship 3-year undergraduate regular degree program customized cleanly with integrated preparatory training and CSAT logical modules.</p>
-                        <span style="background: rgba(42,17,64,0.06); padding: 6px 12px; border-radius: 4px; font-size: 0.82rem; font-weight: 800; color: var(--purple-dark); text-align: center; display: block; margin-top: 10px;">Medium: Marathi/English Medium</span>
+                        <span style="background: rgba(42,17,64,0.06); padding: 6px 12px; border-radius: 4px; font-size: 0.82rem; font-weight: 800; color: var(--purple-dark); text-align: center; display: block; margin-top: 10px;">Medium: Marathi Medium</span>
                     </div>
                 </div>
                 <div class="program-node-card">
@@ -510,19 +722,19 @@
                 <tbody>
                     <tr>
                         <td><strong>BACHELOR OF ARTS CIVIL SERVICE</strong></td>
-                        <td>English Medium</td>
+                        <td style="font-weight: 700; color: var(--purple-lite);">Marathi Medium</td>
                         <td>Kavikulaguru Kalidas Sanskrit University, Ramtek Affiliated</td>
                         <td>UPSC / MPSC / Government Civil Services Track</td>
                     </tr>
                     <tr>
                         <td><strong>M.A. PUBLIC ADMINISTRATION</strong></td>
-                        <td>English Medium</td>
+                        <td style="font-weight: 700; color: var(--purple-lite);">Marathi Medium</td>
                         <td>Kavikulaguru Kalidas Sanskrit University, Ramtek Affiliated</td>
-                        <td>Advanced Administrative Policies & Public Policy Research</td>
+                        <td>Advanced Administrative Policies & Public Administration Research</td>
                     </tr>
                     <tr>
                         <td><strong>POST GRADUATE DIPLOMA IN COMPUTER APPLICATION</strong></td>
-                        <td>English Medium</td>
+                        <td style="font-weight: 700; color: var(--gold-dark);">English Medium</td>
                         <td>Kavikulaguru Kalidas Sanskrit University, Ramtek Affiliated</td>
                         <td>Digital Governance Protocols & Government IT Office Automation</td>
                     </tr>
@@ -538,7 +750,7 @@
                 <h2 class="block-title">Core Infrastructure Facilities Checklist</h2>
             </div>
             
-            <div class="layout-grid-4">
+            <div class="layout-grid-4" style="margin-bottom: 40px;">
                 <div class="amenity-block-box"><i class="fa-solid fa-shield-halved"></i><h4>NCC Training Regiments</h4></div>
                 <div class="amenity-block-box"><i class="fa-solid fa-hands-holding-circle"></i><h4>NSS Voluntary Battalion</h4></div>
                 <div class="amenity-block-box"><i class="fa-solid fa-user-ninja"></i><h4>Elite Guest Faculty Guild</h4></div>
@@ -551,6 +763,17 @@
                 <div class="amenity-block-box"><i class="fa-solid fa-graduation-cap"></i><h4>Competitive Guidance Materials</h4></div>
                 <div class="amenity-block-box"><i class="fa-solid fa-book-open"></i><h4>NEP 2020 Dynamic Curriculum</h4></div>
                 <div class="amenity-block-box"><i class="fa-solid fa-baseball"></i><h4>Sports Infrastructure Tracks</h4></div>
+            </div>
+
+            <div class="layout-grid-2">
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.45.02 AM (1).jpeg" alt="Mock Test">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Mock Evaluation Room Labs</h4>
+                </div>
+                <div class="image-container-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.45.03 AM (1).jpeg" alt="Review Meet">
+                    <h4 style="font-size: 0.95rem; color: var(--purple-dark); margin-top: 12px; font-weight: 700;">Elite Faculty Council Conference Room</h4>
+                </div>
             </div>
         </div>
     </div>
@@ -567,14 +790,18 @@
                 <p>Nurturing rigid military grade discipline, continuous strategic situational response capabilities, and deep national honor values into our active cadet matrix.</p>
             </div>
 
-            <div class="layout-grid-2" style="margin-bottom: 40px;">
+            <div class="layout-grid-3" style="margin-bottom: 40px;">
                 <div class="image-container-frame">
-                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.9rem;">NSS Institutional Action Contingent</h4>
+                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">NSS Volunteer Formations Assembly</h4>
                     <img src="WhatsApp Image 2026-06-11 at 10.43.58 AM.jpeg" alt="NSS Volunteer Formations Assembly">
                 </div>
                 <div class="image-container-frame">
-                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.9rem;">Cadets Active Outdoor Drills & Field Training</h4>
+                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">NCC Cadets Structural Drill Line</h4>
                     <img src="WhatsApp Image 2026-06-08 at 9.23.09 AM.jpeg" alt="NCC Cadets Structural Drill Line">
+                </div>
+                <div class="image-container-frame">
+                    <h4 style="color:var(--purple-dark); margin-bottom:12px; font-weight:700; text-transform:uppercase; font-size:0.85rem;">Cadets Outdoor Drills & Field Exercises</h4>
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.56 AM.jpeg" alt="Cadets Drill">
                 </div>
             </div>
         </div>
@@ -618,10 +845,10 @@
                     <img src="WhatsApp Image 2026-06-11 at 10.44.31 AM.jpeg" alt="MoU Syllabus Agreement Lokmat Clip">
                 </div>
                 <div class="clipper-content-pane">
-                    <h4>प्रशासकीय सेवा महाविद्यालयाचा नव्या धोरणातील अभ्यासक्रमाबाबत करार</h4>
-                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Lokmat News Network | Aug 02, 2024</p>
-                    <p>भद्रावती येथील भद्रावती शिक्षण संस्था संचलित डॉ. विवेक शिंदे प्रशासकीय सेवा महाविद्यालयाच्या वतीने नवीन राष्ट्रीय शैक्षणिक धोरणाच्या (NEP) अनुषंगाने महत्वपूर्ण करार (MoU) करण्यात आला. कवी कुलगुरू कालिदास संस्कृत विश्वविद्यालय रामटेक अंतर्गत चालविल्या जाणाऱ्या अभ्यासक्रमात सामाजिक व व्यावसायिक अभ्यासक्रमाची माहिती प्राप्त व्हावी यासाठी यूजीसीच्या निर्देशानुसार हा करार करण्यात आला आहे.</p>
-                    <p>या धोरणांतर्गत वरोरा येथील उद्योजक रमेश राजूरकर यांच्या संस्थेशी 'जय गुरुदेव स्वच्छता संस्था' सोबत पाच वर्षांचा करार करण्यात आला. याप्रसंगी संस्थेच्या वतीने प्राध्यापक डॉ. प्रशांत पाठक आणि प्रा. गुरुदेव जुमडे यांनी विशेष सहकार्य केले.</p>
+                    <h4>College Executes Operational Agreement for Academic Curriculum Tracks</h4>
+                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Lokmat News Network</p>
+                    <p>Dr. Vivek Shinde Administrative Services College executed a significant Memorandum of Understanding (MoU) aligned comprehensively with the parameters of the National Education Policy (NEP). Following UGC parameters, this tracking path setup creates advanced professional exposure matrices.</p>
+                    <p>The operational framework establishes a strategic 5-year partnership pipeline with the 'Jai Gurudev Cleanliness Organization' corporate platform under the direct executive guidance of Dr. Prashant Pathak and Prof. Gurudev Jumde.</p>
                 </div>
             </div>
 
@@ -630,10 +857,10 @@
                     <img src="WhatsApp Image 2026-06-11 at 10.44.32 AM.jpeg" alt="Cultural Festival Deshonnati Clip">
                 </div>
                 <div class="clipper-content-pane">
-                    <h4>डॉ. विवेक शिंदे प्रशासकीय सेवा महाविद्यालयाचा सांस्कृतिक महोत्सव</h4>
-                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Deshonnati | Aug 26, 2024</p>
-                    <p>स्थानिक डॉ. विवेक शिंदे प्रशासकीय सेवा महाविद्यालयात विविध उपक्रमांनी सांस्कृतिक महोत्सव साजरा करण्यात आला. या महोत्सवांतर्गत विद्यार्थ्यांच्या बौद्धिक विकासात्मक आणि व्यक्तिमत्व विकास कार्यशाळा (Personality Development Workshops) आयोजित करण्यात आल्या होत्या.</p>
-                    <p>या प्रसंगी चित्रकला स्पर्धा, रांगोळी स्पर्धा, सूत्रपठण स्पर्धा, वक्तृत्व स्पर्धा आणि प्रश्नमंजुषा अशा विविध उपक्रमांत विद्यार्थ्यांनी उत्स्फूर्त सहभाग नोंदवून आपल्या कलागुणांचा परिचय दिला. संस्था सचिव डॉ. कार्तिक शिंदे यांनी मार्गदर्शन केले तर महोत्सव यशस्वी करण्यासाठी प्राचार्य प्रमोद पाठक, प्रा. डॉ. प्रशांत पाठक, प्रा. नेहा मानकर, प्रा. प्रज्ञा बुरडकर, प्रा. कपिल राऊत, प्रा. प्रिती कंदीकुटटीवार व प्रा. विशाल प्रसाद यांनी सहकार्य केले.</p>
+                    <h4>Annual Cultural & Personality Grooming Convention Celebrated Successfully</h4>
+                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Deshonnati</p>
+                    <p>The campus hosted its elite Annual Cultural Festival synthesized with multiple behavioral development and capability-building workshops. Students participated enthusiastically in various analytical testing layouts and presentation fields.</p>
+                    <p>Institutional Secretary Dr. Kartik Shinde structured the key operational directives for the festival, backed cleanly by the executive coordination of Principal Pramod Pathak, Dr. Prashant Pathak, Prof. Neha Mankar, and Prof. Kapil Raut.</p>
                 </div>
             </div>
 
@@ -642,10 +869,10 @@
                     <img src="WhatsApp Image 2026-06-11 at 10.44.36 AM (1).jpeg" alt="Voter Awareness Campaign Rally Clip">
                 </div>
                 <div class="clipper-content-pane">
-                    <h4>डॉ. विवेक शिंदे प्रशासकीय सेवा महाविद्यालयाच्या वतीने मतदान जनजागृती रॅली</h4>
-                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Deshonnati | Nov 19, 2024</p>
-                    <p>विधानसभा सार्वत्रिक निवडणुकीत मतदानाचा टक्का वाढावा आणि नागरिकांनी लोकशाहीच्या उत्सवात सहभाग घ्यावा यासाठी डॉ. विवेक शिंदे प्रशासकीय सेवा महाविद्यालयाच्या एनसीसी (NCC) व एनएसएस (NSS) पथकाच्या वतीने शहरात भव्य मतदान जनजागृती रॅली काढण्यात आली.</p>
-                    <p>संस्थेचे सचिव डॉ. कार्तिक शिंदे यांच्या मार्गदर्शनात काढण्यात आलेल्या या मोहिमेत संस्थेचे अध्यक्ष डॉ. विवेक शिंदे यांची प्रमुख उपस्थिती होती. रॅलीमध्ये प्राचार्य प्रमोद पाठक, प्रा. प्रशांत पाठक, प्रा. प्रज्ञा बुरडकर, प्रा. नेहा मानकर, प्रा. कपिल राऊत, प्रा. विशाल प्रसाद, प्रा. प्रिती कांदिकुट्टीवार आणि शिक्षकेतर कर्मचारी सीमा हवेलीकर, पुनम काळे व विद्यार्थी मोठ्या संख्येने सहभागी झाले.</p>
+                    <h4>NCC & NSS Regiments Execute Public Awareness Campaign Drive</h4>
+                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Deshonnati</p>
+                    <p>To optimize public democratic parameters for the general assembly selections, a comprehensive campaign march was executed by the joint student wings of the NCC and NSS regiments throughout the regional municipal blocks.</p>
+                    <p>Led under the leadership vectors of Institutional Secretary Dr. Kartik Shinde, the campaign was monitored actively by Institutional President Dr. Vivek Shinde alongside senior academic executive members.</p>
                 </div>
             </div>
 
@@ -654,10 +881,10 @@
                     <img src="WhatsApp Image 2026-06-11 at 10.44.36 AM.jpeg" alt="Dr Ambedkar Mahaparinirvan Diwas Clip">
                 </div>
                 <div class="clipper-content-pane">
-                    <h4>प्रशासकीय सेवा महाविद्यालय, भद्रावती येथे महापरिनिर्वाण दिन कार्यक्रम</h4>
+                    <h4>Mahaparinirvan Diwas Observed with Deep Institutional Respect</h4>
                     <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published Press Log</p>
-                    <p>डॉ. विवेक शिंदे प्रशासकीय सेवा महाविद्यालयात भारतरत्न डॉ. बाबासाहेब आंबेडकर यांच्या महापरिनिर्वाण दिनानिमित्त आदरांजली सभेचे आयोजन करण्यात आले होते. कार्यक्रमाची सुरुवात भद्रावती शिक्षण संस्थेचे व महाविद्यालयाचे विश्वस्त डॉ. जयंत वानखेडे यांच्या मार्गदर्शनाखाली करण्यात आली.</p>
-                    <p>संस्थेचे सचिव डॉ. कार्तिक शिंदे यांनी डॉ. बाबासाहेब आंबेडकर यांना आदरयुक्त श्रद्धांजली वाहिली. या प्रसंगी आपले मनोगत व्यक्त करताना प्रा. डॉ. प्रशांत पाठक म्हणाले की, आपली राज्यघटना ही मानवता, सामाजिक, आर्थिक न्याय, स्वातंत्र्य व बंधुता अशा उदात्त मूल्यांनी ओतप्रोत भरलेली आहे; ती आत्मसात केली तर इतर पुस्तके चाळण्याची गरज पडणार नाही.</p>
+                    <p>A solemn institutional assembly was organized on campus to offer homage on the Mahaparinirvan Diwas of Bharat Ratna Dr. B.R. Ambedkar, arranged under the guidance of Trustee Dr. Jayant Wankhede.</p>
+                    <p>Institutional Secretary Dr. Kartik Shinde extended official respects, while Dr. Prashant Pathak addressed the student body regarding the constitutional metrics of economic equity, system justice, and societal liberties.</p>
                 </div>
             </div>
 
@@ -666,10 +893,10 @@
                     <img src="WhatsApp Image 2026-06-11 at 10.44.39 AM.jpeg" alt="Vaishnavi Khangar Kabaddi Sports Clip">
                 </div>
                 <div class="clipper-content-pane">
-                    <h4>सांस्कृतिक व क्रीडा: वैष्णवी खंगार चे कबड्डी खेळात सुयश</h4>
-                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Deshonnati | Feb 20, 2025</p>
-                    <p>डॉ. विवेक शिंदे प्रशासकीय सेवा महाविद्यालयातील बी.ए. तृतीय वर्षाची विद्यार्थिनी व कबड्डी खेळाडू वैष्णवी सोमेश्वर खंगार हिने उत्कृष्ट खेळ प्रदर्शन करून विद्यापीठ स्तरीय निवडीत आपले स्थान निश्चित केले आहे. गडचिरोली येथे आयोजित क्रीडा महोत्सवात ती कवि कुलगुरू कालिदास संस्कृत विश्वविद्यालयाचे प्रतिनिधित्व करणार आहे.</p>
-                    <p>या सुयशाबद्दल संस्था सचिव डॉ. कार्तिक शिंदे यांनी वैष्णवीचे विशेष कौतुक करून पुढील वाटचालीस शुभेच्छा दिल्या. यावेळी प्राचार्य प्रमोद पाठक, डॉ. प्रशांत पाठक, प्रीती कंदीकुट्टीवार, कपिल राऊत, विशाल प्रसाद, प्रज्ञा लांडे, नेहा मानकर व शिक्षकेतर कर्मचारी सीमा हवेलीकर व पूनम काळे उपस्थित होते.</p>
+                    <h4>Sports Excellence: Vaishnavi Khangar Selected for University Kabaddi Roster</h4>
+                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Deshonnati</p>
+                    <p>Vaishnavi Someshwar Khangar, an elite student of the B.A. final year block, secured a position in the official sports selection trials to represent Kavikulaguru Kalidas Sanskrit University at the state university games roster.</p>
+                    <p>Institutional Secretary Dr. Kartik Shinde officially commended her athletic achievement, wishing her success alongside the formal executive council presence of Principal Pramod Pathak and Kapil Raut.</p>
                 </div>
             </div>
 
@@ -678,25 +905,38 @@
                     <img src="WhatsApp Image 2026-06-11 at 10.44.41 AM.jpeg" alt="Digital Agriculture Practice Training Clip">
                 </div>
                 <div class="clipper-content-pane">
-                    <h4>डॉ. विवेक शिंदे प्रशासकीय सेवा महाविद्यालयात डिजिटल शेती विषयक प्रायोगिक शिक्षण</h4>
-                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Deshonnati | Mar 10, 2025</p>
-                    <p>ग्रामीण भागातील स्वयंसेवक तसेच विद्यार्थ्यांसाठी आधुनिक कृषी तंत्रज्ञानाचा प्रसार करण्याच्या दृष्टीने महाविद्यालयात 'डिजिटल शेती विषयक प्रायोगिक शिक्षण' कार्यशाळेचे आयोजन करण्यात आले होते. संस्था सचिव डॉ. कार्तिक शिंदे यांच्या संकल्पनेतून हा उपक्रम यशस्वीरी्या राबविण्यात आला.</p>
-                    <p>या प्रसंगी मुख्य मार्गदर्शक प्रा. राजेंद्र साबळे यांनी उपस्थितांना डिजिटल फार्मिंग आणि प्रॅक्टिकल टूल्स विषयी सविस्तर माहिती दिली. कार्यक्रमाला प्राचार्य प्रमोद पाठक, डॉ. प्रशांत पाठक, प्रा. नेहा मानकर, प्रा. काळबांधे, प्रा. विशाल प्रसाद, प्रा. कपिल राऊत, सीमा हवेलीकर व पुनम काळे प्रामुख्याने उपस्थित होते.</p>
+                    <h4>Advanced Practical Workshop Organized on Digital Agriculture Frameworks</h4>
+                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Deshonnati</p>
+                    <p>To provide modern scientific exposure to regional volunteers and students, a specialized workshop on "Digital Farming and Practical Agritech Tools" was executed following the vision of Secretary Dr. Kartik Shinde.</p>
+                    <p>Key agritech methodologies were demonstrated by Prof. Rajendra Sabale to the tracking batch, coordinated seamlessly by Dr. Prashant Pathak and Prof. Neha Mankar.</p>
                 </div>
             </div>
 
-            <div class="news-clipper-grid" style="margin-bottom: 60px;">
+            <div class="news-clipper-grid">
                 <div class="clipper-img-frame">
                     <img src="WhatsApp Image 2026-06-11 at 10.44.45 AM.jpeg" alt="Nilkanthrao Shinde Birth Anniversary Tree Plantation Clip">
                 </div>
                 <div class="clipper-content-pane">
-                    <h4>निळकंठराव शिंदे यांच्या जयंती निमित्त उपक्रमांचे आयोजन</h4>
+                    <h4>Tree Plantation Drive Executed to Commemorate Birth Anniversary of Late Founder</h4>
                     <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem;"><i class="fa-solid fa-newspaper"></i> Published in Deshonnati</p>
-                    <p>भद्रावती शिक्षण संस्थेचे संस्थापक सचिव माजी आमदार स्वर्गीय निळकंठराव शिंदे यांच्या जयंतीनिमित्त निळकंठराव शिंदे विज्ञान व कला महाविद्यालयात संयुक्त विद्यमाने भव्य वृक्षारोपण (Tree Plantation Drive) आणि शैक्षणिक उपक्रम राबविण्यात आले.</p>
-                    <p>या प्रसंगी संस्थेचे अध्यक्ष डॉ. विवेक शिंदे यांनी संस्थेच्या प्रगतीचा आलेख मांडला आणि संस्थापक सचिवांच्या कठोर परिश्रमामुळेच आज संस्थेचा वटवृक्ष पाहायला मिळत असल्याचे सांगत याचे संवर्धन करण्याची जबाबदारी सर्वांची असल्याचे मत व्यक्त केले. कार्यक्रमाला सचिव डॉ. कार्तिक शिंदे, सहसचिव डॉ. विशाल शिंदे व प्राचार्य डॉ. एल. एस. लाडके, डॉ. अपर्णा धोटे, कुलदीप भोंगळे, प्रा. सचिन श्रीरामे यांच्यासह एनएसएस आणि एनसीसी कॅडेट्स उपस्थित होते.</p>
+                    <p>To celebrate the anniversary of Late Nilkanthrao Shinde, the visionary Founding Secretary and former MLA, a massive plantation and environmental tracking campaign was executed on campus.</p>
+                    <p>Institutional President Dr. Vivek Shinde highlighted the foundational hardships faced during inception, while Secretary Dr. Kartik Shinde and Co-Secretary Dr. Vishal Shinde supervised the active NCC and NSS volunteer wings.</p>
                 </div>
             </div>
 
+            <div class="news-clipper-grid">
+                <div class="clipper-img-frame">
+                    <img src="WhatsApp Image 2026-06-11 at 10.44.04 AM.jpeg" alt="Official Lokmat Deshonnati Press Media Clipping">
+                </div>
+                <div class="clipper-content-pane">
+                    <h4>"I Will Become an IAS Officer" Special Competitive Guidance Forum</h4>
+                    <p style="font-weight: 700; color: var(--purple-lite); font-size: 0.88rem; margin-bottom: 5px;"><i class="fa-solid fa-newspaper"></i> Published in Lokmat / Deshonnati Media Network</p>
+                    <p>A premier free guidance camp and administrative test series under the theme "I Will Become an IAS Officer" was successfully executed on campus, featuring keynote addresses by Dr. Nareshchandra Kathole and Dr. Dilip Jhalke.</p>
+                    <p>Institutional Secretary <strong>Dr. Kartik Shinde</strong> motivated the students regarding systematic focus, academic consistency, and time tracking values, alongside the coordination layout of Prof. Ramesh Chavan and Prof. Kapil Raut.</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--purple-dark); font-weight: 800; margin-top: 50px; margin-bottom: 25px; text-transform: uppercase; font-size: 1.1rem;"><i class="fa-solid fa-trophy text-secondary"></i> Star Alumni Placement Matrices</h3>
             <div class="achievers-matrix-grid">
                 <div class="achiever-node-card">
                     <div class="achiever-photo-circle">
@@ -728,49 +968,75 @@
 
     <div id="view-admission" class="dashboard-view-panel">
         <div class="content-container">
-            <div class="block-header">
-                <span class="section-tag">Enrolments Open 2026</span>
-                <h2 class="block-title">Online Verification Enquiry Panel</h2>
+            <div class="block-header" style="position: relative;">
+                <span class="section-tag" style="background: #25D366; color: #fff; padding: 4px 12px; border-radius: 20px; font-weight: 800; animation: pulseGlowEffect 1.5s infinite;">⚡ ENROLMENTS OPEN 2026-27</span>
+                <h2 class="block-title">Online Enrollment Portal</h2>
             </div>
             
             <div class="admissions-split-container" style="margin-bottom: 60px;">
                 <div class="admissions-left-panel">
-                    <h3>Secure Your Strategic Rank</h3>
-                    <p>Transmit your verification data parameters via the digital form to register for seat allocation pipelines.</p>
+                    <h3>Eligibility & Guidelines</h3>
+                    <p class="panel-p-intro">Please review the checklist requirements and transmit your academic data metrics accurately via the enquiry desk console.</p>
+                    
                     <ul class="document-checklist-node">
-                        <h4><i class="fa-solid fa-file-invoice"></i> Required Document Checklist:</h4>
-                        <li><i class="fa-solid fa-square-check"></i> Secondary & Higher Secondary Marksheets</li>
-                        <li><i class="fa-solid fa-square-check"></i> Government Identity Proof (Aadhaar Card)</li>
-                        <li><i class="fa-solid fa-square-check"></i> Recent Passport Sized Photograph & Original TC</li>
-                        <li><i class="fa-solid fa-square-check"></i> Caste, Validity & Income Slips (For Category Claim)</li>
+                        <h4><i class="fa-solid fa-file-shield"></i> Required Verification Checklist</h4>
+                        <li><i class="fa-solid fa-circle-check"></i> Secondary School Certificate (10th Marksheet)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Higher Secondary Certificate (12th Marksheet)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Original Institutional Leaving/Transfer Certificate (TC)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Government Certified National Aadhaar Card Identity</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Cast & Validity Certificate (For reservation criteria claims)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Valid Current Income Certificate Document</li>
                     </ul>
+                    
                     <div class="scholarship-notice-box">
-                        <h4 style="color: var(--gold); font-size: 1.05rem; margin-bottom: 6px;"><i class="fa-solid fa-hand-holding-dollar"></i> Government Scholarships Granted</h4>
-                        <p style="font-size: 0.88rem; opacity: 0.95; line-height: 1.5;">100% full financial educational scholarship provisions are executed for eligible backward class Reserved category layouts following standard parameters.</p>
+                        <h4><i class="fa-solid fa-hand-holding-dollar"></i> Government Scholarships Active</h4>
+                        <p>100% full educational scholarship and fee relaxation regulations are executed seamlessly for eligible reserved category layouts (SC / ST / OBC / VJNT) following official Government of Maharashtra protocols.</p>
                     </div>
                 </div>
                 
                 <div class="admissions-form-pane">
-                    <h3>Online Admission Query Form</h3>
-                    <form id="admissionMasterFormPanel" onsubmit="alert('Your Online Registration Inquiry Has Been Recorded Successfully!'); return false;">
+                    <h3>Digital Registration Console</h3>
+                    <p class="form-p-sub">Fill out the mandatory metric inputs below to establish your profile pipeline.</p>
+                    
+                    <form id="admissionMasterFormPanel" onsubmit="alert('Your Online Registration Inquiry Has Been Recorded Successfully! Our helpdesk Officials will track your metrics shortly.'); return false;">
                         <div class="form-row-group">
-                            <label>Student Full Name *</label>
-                            <input type="text" class="form-input-ctrl" placeholder="e.g., Rahul Shinde" required>
+                            <label><i class="fa-solid fa-user-tie"></i> Student Full Name *</label>
+                            <input type="text" class="form-input-ctrl" placeholder="Enter full legal name (e.g., Rahul Shinde)" required>
                         </div>
+                        
                         <div class="form-row-group">
-                            <label>Contact Mobile Number *</label>
-                            <input type="tel" class="form-input-ctrl" placeholder="Enter 10-Digit Mobile Number" required>
+                            <label><i class="fa-solid fa-phone-volume"></i> Mobile Contact Number *</label>
+                            <input type="tel" class="form-input-ctrl" placeholder="Enter 10-digit mobile layout link" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
                         </div>
+                        
                         <div class="form-row-group">
-                            <label>Target Academic Track *</label>
+                            <label><i class="fa-solid fa-envelope"></i> Email Address *</label>
+                            <input type="email" class="form-input-ctrl" placeholder="Enter electronic mailing address" required>
+                        </div>
+
+                        <div class="form-row-group">
+                            <label><i class="fa-solid fa-map-location-dot"></i> Select Regional District *</label>
                             <select class="form-input-ctrl" required>
-                                <option value="">-- Choose Course Track --</option>
-                                <option value="BA">BACHELOR OF ARTS CIVIL SERVICE</option>
-                                <option value="MA">M.A. PUBLIC ADMINISTRATION</option>
-                                <option value="PGDCA">POST GRADUATE DIPLOMA IN COMPUTER APPLICATION</option>
+                                <option value="">-- Select Your District --</option>
+                                <option value="Chandrapur">Chandrapur District</option>
+                                <option value="Nagpur">Nagpur District</option>
+                                <option value="Wardha">Wardha District</option>
+                                <option value="Gadchiroli">Gadchiroli District</option>
+                                <option value="Other">Other Region</option>
                             </select>
                         </div>
-                        <button type="submit" class="tab-trigger-node enroll-action-btn" style="width:100%; border:none; padding:15px; cursor:pointer; text-align:center; font-size: 0.9rem; border-radius: 4px;">Transmit Registration Query</button>
+                        
+                        <div class="form-row-group">
+                            <label><i class="fa-solid fa-book-bookmark"></i> Target Preparatory Stream *</label>
+                            <select class="form-input-ctrl" required>
+                                <option value="">-- Choose Course Framework Track --</option>
+                                <option value="BA">B.A. Civil Service (Marathi Medium Integrated UPSC/MPSC Track)</option>
+                                <option value="MA">Public Administration (M.A. Marathi Medium Professional Degree)</option>
+                                <option value="PGDCA">P.G.D.C.A. Diploma (English Medium Tech Governance Program)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="tab-trigger-node enroll-action-btn" style="width:100%; border:none; padding:15px; cursor:pointer; text-align:center; font-size: 0.9rem; border-radius: 6px; margin-top: 10px;">Transmit Query Parameters <i class="fa-solid fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
