@@ -41,14 +41,14 @@
         }
 
         @keyframes premiumAdGlow {
-            0% { border-color: var(--gold); box-shadow: 0 10px 30px rgba(42, 17, 64, 0.15); }
-            50% { border-color: #ff5252; box-shadow: 0 15px 45px rgba(229, 57, 53, 0.4); }
-            100% { border-color: var(--gold); box-shadow: 0 10px 30px rgba(42, 17, 64, 0.15); }
+            0% { border-color: var(--gold); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.2); }
+            50% { border-color: #ffb300; box-shadow: 0 20px 50px rgba(214, 175, 55, 0.4); }
+            100% { border-color: var(--gold); box-shadow: 0 15px 40px rgba(42, 17, 64, 0.2); }
         }
 
         @keyframes tagFlash {
             0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(0.96); background-color: #d32f2f; }
+            50% { opacity: 0.85; transform: scale(0.97); background-color: #c62828; }
         }
 
         @keyframes headlineGlow {
@@ -64,6 +64,24 @@
         @keyframes hoverCardFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
+        }
+
+        /* FLOATING ANIMATIONS FOR CIVIL STAGE VECTORS */
+        @keyframes floatSlow1 {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+            50% { transform: translateY(-15px) rotate(3deg); opacity: 1; }
+        }
+        @keyframes floatSlow2 {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(15px) rotate(-4deg); opacity: 0.95; }
+        }
+        @keyframes shieldPulse {
+            0%, 100% { border-color: rgba(214, 175, 55, 0.3); box-shadow: 0 10px 30px rgba(42, 17, 64, 0.1); }
+            50% { border-color: rgba(214, 175, 55, 0.8); box-shadow: 0 15px 35px rgba(214, 175, 55, 0.25); }
+        }
+        @keyframes leaderBorderPulse {
+            0%, 100% { border-color: rgba(214, 175, 55, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+            50% { border-color: var(--gold); box-shadow: 0 12px 35px rgba(42, 17, 64, 0.12); }
         }
 
         /* Top Animated Announcement Ticker Bar */
@@ -185,9 +203,9 @@
             display: flex;
             justify-content: center;
             overflow-x: auto;
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
         }
-        .navigation-control-panel::-webkit-scrollbar { display: none; /* Chrome, Safari */ }
+        .navigation-control-panel::-webkit-scrollbar { display: none; }
         
         .tabs-row-list {
             max-width: 1440px;
@@ -261,57 +279,203 @@
         body:has(#view-admission:target) #view-admission { display: block; animation: fadeInSlideUp 0.4s ease-out; }
         body:has(#view-admission:target) .tab-trigger-node[href="#view-admission"] { background: var(--purple-dark); color: var(--white); }
 
-        /* Billboard Section Layout */
+        /* ADVANCED PURPLE HERO BILLBOARD WITH ANIMATED CIVIL GRAPHICS */
         .academy-hero-billboard {
-            background: linear-gradient(135deg, rgba(42, 17, 64, 0.94), rgba(23, 10, 38, 0.96)), url('WhatsApp Image 2026-05-25 at 11.14.01 PM.jpg') no-repeat center center/cover;
-            padding: 85px 20px;
+            background: linear-gradient(135deg, rgba(31, 12, 48, 0.96) 0%, rgba(42, 17, 64, 0.94) 50%, rgba(20, 7, 33, 0.98) 100%), url('WhatsApp Image 2026-05-25 at 11.14.01 PM.jpg') no-repeat center center/cover;
+            padding: 100px 20px;
             text-align: center;
             color: var(--white);
             border-bottom: 5px solid var(--gold);
-            border-radius: 0 0 30px 30px;
+            border-radius: 0 0 40px 40px;
+            position: relative;
+            overflow: hidden;
         }
-        .academy-hero-billboard h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; font-weight: 700; animation: headlineGlow 3s infinite ease-in-out; line-height: 1.3; }
-        .academy-hero-billboard p { font-size: 1.3rem; font-style: italic; opacity: 0.95; }
-
-        /* Admission Advertising Dashboard Panel */
-        .premium-admission-ad-box {
-            max-width: 950px;
-            margin: 40px auto 25px;
-            background: linear-gradient(135deg, #2A1140, #170924);
-            border: 4px solid var(--gold);
-            border-radius: var(--radius-lg);
-            padding: 35px;
+        
+        .hero-layout-wrapper {
+            max-width: 1340px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: 30px;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-text-side { text-align: left; }
+        .academy-hero-billboard h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3rem; 
+            color: var(--gold); 
+            text-transform: uppercase; 
+            margin-bottom: 15px; 
+            font-weight: 700; 
+            animation: headlineGlow 3s infinite ease-in-out; 
+            line-height: 1.2; 
+        }
+        .academy-hero-billboard p { font-size: 1.4rem; font-style: italic; opacity: 0.95; margin-bottom: 30px; color: #f0ebf7; }
+
+        /* CIVIL GRAPHIC VEHICLE SHIELDS PANEL */
+        .hero-graphics-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            position: relative;
+        }
+        .civil-graphic-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 2px solid rgba(214, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            animation: shieldPulse 4s infinite ease-in-out;
+        }
+        .civil-graphic-card:nth-child(odd) { animation: floatSlow1 5s infinite ease-in-out, shieldPulse 4s infinite ease-in-out; }
+        .civil-graphic-card:nth-child(even) { animation: floatSlow2 6s infinite ease-in-out, shieldPulse 4s infinite ease-in-out; margin-top: 25px; }
+        
+        .civil-graphic-card i {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: inline-block;
+            text-shadow: 0 4px 15px rgba(214, 175, 55, 0.3);
+        }
+        .civil-graphic-card h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .civil-graphic-card span {
+            font-size: 0.75rem;
+            color: #d2c4e0;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        /* RE-ENGINEERED ELITE CIVIL SERVICES ADVERTISEMENT PANEL */
+        .premium-admission-ad-box {
+            max-width: 1050px;
+            margin: 50px auto 30px;
+            background: linear-gradient(145deg, #1d0a2d 0%, #2a1140 50%, #150821 100%);
+            border: 3px solid var(--gold);
+            border-radius: 20px;
+            padding: 45px 40px;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 40px;
             align-items: center;
             position: relative;
             overflow: hidden;
-            animation: premiumAdGlow 3.5s infinite ease-in-out, hoverCardFloat 6s infinite ease-in-out;
+            animation: premiumAdGlow 4s infinite ease-in-out, hoverCardFloat 6s infinite ease-in-out;
         }
         .premium-admission-ad-box::before {
-            content: 'BATCH 2026-27';
+            content: 'OFFICER BATCH 2026-27';
             position: absolute;
-            top: 18px; right: -38px;
-            background: #e53935;
+            top: 25px; right: -45px;
+            background: linear-gradient(90deg, #d32f2f, #e53935);
             color: #fff;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: 800;
-            padding: 5px 35px;
+            padding: 6px 45px;
             transform: rotate(45deg);
             letter-spacing: 1px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            border: 1px dashed rgba(255,255,255,0.4);
         }
         .ad-info-side { text-align: left; color: #fff; }
-        .ad-info-side h4 { font-size: 2.1rem; color: var(--gold); font-weight: 800; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; }
-        .ad-info-side h5 { font-size: 1.1rem; color: var(--white); margin-bottom: 15px; font-weight: 600; font-style: italic; }
-        .ad-info-side .flashing-badge { display: inline-block; background: #e53935; padding: 5px 14px; font-size: 0.75rem; font-weight: 800; border-radius: 4px; letter-spacing: 0.5px; animation: tagFlash 1.6s infinite ease-in-out; margin-bottom: 15px; text-transform: uppercase; }
-        .ad-info-side p { font-size: 0.9rem; opacity: 0.85; line-height: 1.6; text-align: justify; }
-        .ad-action-side { text-align: center; background: rgba(255,255,255,0.04); padding: 25px; border-radius: var(--radius-md); border: 1px dashed rgba(214,175,55,0.3); }
-        .ad-action-side .ad-highlight-title { font-size: 0.85rem; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
-        .ad-action-side ul { list-style: none; text-align: left; margin-bottom: 25px; padding-left: 5px; }
-        .ad-action-side ul li { font-size: 0.88rem; color: #fff; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        .ad-action-side ul li i { color: #25D366; font-size: 1rem; }
+        .ad-academy-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(214, 175, 55, 0.15);
+            border: 1px solid var(--gold);
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+        .ad-info-side h4 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; 
+            color: var(--white); 
+            font-weight: 700; 
+            margin-bottom: 8px; 
+            text-transform: uppercase; 
+            line-height: 1.2;
+        }
+        .ad-info-side h4 span { color: var(--gold); font-weight: 800; }
+        .ad-info-side h5 { 
+            font-size: 1.15rem; 
+            color: #e0d5eb; 
+            margin-bottom: 20px; 
+            font-weight: 500; 
+            letter-spacing: 0.5px;
+            border-left: 3px solid var(--gold);
+            padding-left: 12px;
+        }
+        .ad-info-side p { font-size: 0.92rem; opacity: 0.85; line-height: 1.7; text-align: justify; margin-bottom: 25px; }
+        
+        .ad-features-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .ad-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #f0ebf7;
+        }
+        .ad-feature-item i { color: var(--gold); font-size: 1rem; }
+
+        .ad-action-side { 
+            background: rgba(255, 255, 255, 0.03); 
+            padding: 35px 30px; 
+            border-radius: 14px; 
+            border: 1px solid rgba(214, 175, 55, 0.2); 
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+        .ad-action-side .ad-highlight-title { 
+            font-size: 0.9rem; 
+            font-weight: 800; 
+            color: var(--gold); 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            margin-bottom: 20px; 
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        .ad-action-side ul { list-style: none; text-align: left; margin-bottom: 30px; }
+        .ad-action-side ul li { 
+            font-size: 0.95rem; 
+            color: var(--white); 
+            font-weight: 600; 
+            margin-bottom: 14px; 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            background: rgba(42, 11, 64, 0.4);
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+        .ad-action-side ul li:hover { transform: translateX(5px); border-color: rgba(214, 175, 55, 0.6); background: rgba(106, 57, 147, 0.3); }
+        .ad-action-side ul li i { color: #25D366; font-size: 1.1rem; }
 
         /* EXCLUSIVE CSS INTERACTIVE TIMELINE STEP GRAPH MAP */
         .interactive-step-map-grid {
@@ -390,46 +554,16 @@
             gap: 15px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .vm-card-premium::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
-        }
+        .vm-card-premium::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; }
         .vm-card-premium.vision::before { background: var(--gold); }
         .vm-card-premium.mission::before { background: var(--purple-lite); }
-        .vm-card-premium:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 45px rgba(42, 17, 64, 0.12);
-        }
-        .vm-icon-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .vm-icon-circle {
-            width: 55px;
-            height: 55px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
+        .vm-card-premium:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(42, 17, 64, 0.12); }
+        .vm-icon-header { display: flex; align-items: center; gap: 15px; }
+        .vm-icon-circle { width: 55px; height: 55px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
         .vm-card-premium.vision .vm-icon-circle { background: rgba(214, 175, 55, 0.15); color: #b38f1d; }
         .vm-card-premium.mission .vm-icon-circle { background: rgba(106, 57, 147, 0.1); color: var(--purple-lite); }
-        .vm-icon-header h3 {
-            font-size: 1.4rem;
-            color: var(--purple-dark);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .vm-card-premium p {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-            line-height: 1.7;
-            text-align: justify;
-        }
+        .vm-icon-header h3 { font-size: 1.4rem; color: var(--purple-dark); font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+        .vm-card-premium p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.7; text-align: justify; }
 
         /* Matrices Tables Configuration */
         .table-responsive-wrapper {
@@ -448,8 +582,17 @@
         .bullet-checks li { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-weight: 600; font-size: 0.98rem; }
         .bullet-checks i { color: var(--gold); }
 
-        /* Founders Executive Profile Module Layouts */
-        .spotlight-layout { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(0,0,0,0.02); margin-bottom: 40px; }
+        /* Founders Executive Profile Layouts with Border Animation */
+        .spotlight-layout { 
+            background: var(--white); 
+            border-radius: var(--radius-lg); 
+            overflow: hidden; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            border: 3px solid rgba(214, 175, 55, 0.2); 
+            margin-bottom: 40px; 
+            animation: leaderBorderPulse 4s infinite ease-in-out;
+        }
         .spotlight-left-panel { background: linear-gradient(135deg, var(--purple-dark), #150821); color: var(--white); padding: 60px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
         .spotlight-portrait {
@@ -464,29 +607,47 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .spotlight-layout:hover .spotlight-portrait { transform: scale(1.05); }
+        .spotlight-layout:hover .spotlight-portrait { transform: scale(1.08); }
         .spotlight-portrait img { width: 100%; height: 100%; object-fit: cover; }
         
-        .spotlight-circle-avatar { width: 135px; height: 135px; background: var(--white); border-radius: 50%; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--purple-dark); border: 4px solid var(--gold); }
         .spotlight-right-panel { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
         .spotlight-right-panel blockquote { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-style: italic; color: var(--purple-dark); position: relative; padding-left: 35px; line-height: 1.6; font-weight: 600; }
         .spotlight-right-panel blockquote::before { content: '“'; font-size: 5.5rem; position: absolute; left: 0; top: -25px; color: var(--gold); opacity: 0.5; }
 
-        /* Program Cards */
-        .program-node-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border-bottom: 5px solid var(--purple-lite); display: flex; flex-direction: column; height: 100%; transition: all 0.3s ease; }
-        .program-node-card:hover { transform: translateY(-8px); border-bottom-color: var(--gold); }
+        /* Program Cards with Modern Hover Shimmer */
+        .program-node-card { 
+            background: var(--white); 
+            border-radius: var(--radius-lg); 
+            overflow: hidden; 
+            box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); 
+            border-bottom: 5px solid var(--purple-lite); 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
+            transition: all 0.4s ease; 
+        }
+        .program-node-card:hover { transform: translateY(-8px); border-bottom-color: var(--gold); box-shadow: 0 20px 45px rgba(106, 57, 147, 0.15); }
         .program-header-panel { background: linear-gradient(135deg, var(--purple-dark), #1A0B28); color: var(--white); padding: 35px 25px; text-align: center; }
         .program-header-panel h3 { font-size: 1.8rem; font-weight: 800; }
         .program-header-panel p { color: var(--gold); font-weight: 700; margin-top: 4px; font-size: 0.9rem; text-transform: uppercase; }
         .program-body-panel { padding: 35px 30px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         .program-body-panel p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; }
 
-        .amenity-block-box { background: var(--white); padding: 35px 25px; border-radius: var(--radius-md); text-align: center; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); border: 1px solid rgba(42,17,64,0.02); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .amenity-block-box:hover { background: var(--purple-dark); color: var(--white); transform: scale(1.05); }
-        .amenity-block-box i { font-size: 2.4rem; color: var(--gold); margin-bottom: 18px; display: inline-block; transition: color 0.3s; }
-        .amenity-block-box:hover i { color: var(--white); }
+        /* Amenity Blocks Animation */
+        .amenity-block-box { 
+            background: var(--white); 
+            padding: 35px 25px; 
+            border-radius: var(--radius-md); 
+            text-align: center; 
+            box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); 
+            border: 1px solid rgba(42,17,64,0.02); 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .amenity-block-box:hover { background: var(--purple-dark); color: var(--white); transform: scale(1.06); }
+        .amenity-block-box i { font-size: 2.4rem; color: var(--gold); margin-bottom: 18px; display: inline-block; transition: all 0.4s ease; }
+        .amenity-block-box:hover i { color: var(--white); transform: rotateY(360deg) scale(1.1); }
         .amenity-block-box h4 { font-size: 1rem; font-weight: 700; }
 
         .command-banner-canvas { background: linear-gradient(rgba(42,17,64,0.88), rgba(26,11,40,0.92)), url('WhatsApp Image 2026-06-08 at 9.23.09 AM.jpeg') no-repeat center center/cover; color: var(--white); padding: 80px 40px; border-radius: var(--radius-lg); text-align: center; margin-bottom: 50px; border-bottom: 4px solid var(--gold); }
@@ -500,14 +661,14 @@
         .achiever-node-card h4 { font-size: 1.05rem; color: var(--purple-dark); font-weight: 700; }
         .achiever-node-card p { font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-top: 6px; letter-spacing: 0.5px; }
 
-        /* Gallery Layout Config */
+        /* Gallery Zoom & Dynamic Overlay Config */
         .gallery-layout-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .gallery-album-card { height: 270px; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 15px 40px rgba(42, 17, 64, 0.1); position: relative; border: 3px solid var(--white); transition: all 0.4s ease; }
-        .gallery-album-card:hover { transform: scale(1.03); box-shadow: 0 20px 45px rgba(0,0,0,0.15); }
-        .gallery-album-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-        .gallery-album-card:hover img { transform: scale(1.08); }
-        .gallery-blur-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(42, 17, 64, 0.95), transparent 70%); display: flex; align-items: flex-end; padding: 25px; opacity: 1; transition: background 0.3s; }
-        .gallery-album-card:hover .gallery-blur-overlay { background: linear-gradient(to top, rgba(106, 57, 147, 0.95), transparent 70%); }
+        .gallery-album-card:hover { transform: scale(1.03); box-shadow: 0 20px 45px rgba(0,0,0,0.18); }
+        .gallery-album-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .gallery-album-card:hover img { transform: scale(1.12); }
+        .gallery-blur-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(42, 17, 64, 0.95), transparent 70%); display: flex; align-items: flex-end; padding: 25px; opacity: 1; transition: all 0.4s ease; }
+        .gallery-album-card:hover .gallery-blur-overlay { background: linear-gradient(to top, rgba(106, 57, 147, 0.95), transparent 60%); }
         .gallery-blur-overlay h5 { color: var(--white); font-size: 1.05rem; font-weight: 600; }
 
         /* Press News Clipper Styling */
@@ -531,15 +692,15 @@
         .scholarship-notice-box h4 { font-size: 0.95rem; color: #fff; text-transform: uppercase; margin-bottom: 5px; font-weight: 700; }
         .scholarship-notice-box p { font-size: 0.85rem; opacity: 0.85; line-height: 1.5; }
         
-        /* CORE FORMS GRAPHIC COMPONENT INPUT CONTROLS */
+        /* INPUT FIELD ANIMATION ENGINE */
         .admissions-form-pane { padding: 50px; background: var(--white); }
         .admissions-form-pane h3 { color: var(--purple-dark); font-weight: 800; margin-bottom: 5px; font-size: 1.7rem; text-transform: uppercase; }
         .admissions-form-pane .form-p-sub { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 30px; }
         .form-row-group { margin-bottom: 20px; text-align: left; }
         .form-row-group label { display: block; font-weight: 700; color: var(--purple-dark); margin-bottom: 6px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .form-input-ctrl { width: 100%; padding: 12px 16px; border: 2px solid #E2E8F0; border-radius: 6px; outline: none; background-color: #F8FAFC; font-size: 0.92rem; font-weight: 600; color: var(--text-dark); transition: all 0.3s ease; }
+        .form-input-ctrl { width: 100%; padding: 12px 16px; border: 2px solid #E2E8F0; border-radius: 6px; outline: none; background-color: #F8FAFC; font-size: 0.92rem; font-weight: 600; color: var(--text-dark); transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .form-input-ctrl::placeholder { color: #94A3B8; font-weight: 500; }
-        .form-input-ctrl:focus { border-color: var(--purple-lite); background-color: var(--white); box-shadow: 0 0 0 4px rgba(106, 57, 147, 0.1); }
+        .form-input-ctrl:focus { border-color: var(--gold); background-color: var(--white); box-shadow: 0 0 0 4px rgba(214, 175, 55, 0.15); transform: translateY(-2px); }
         select.form-input-ctrl { cursor: pointer; color: var(--text-dark); }
 
         .office-grid-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
@@ -558,6 +719,8 @@
             .navigation-control-panel { position: absolute; top: 310px; }
             body { padding-top: 375px; }
             .dashboard-view-panel { scroll-margin-top: 20px; }
+            .hero-layout-wrapper { grid-template-columns: 1fr; text-align: center; }
+            .hero-text-side { text-align: center; }
         }
 
         @media (max-width: 992px) {
@@ -566,6 +729,7 @@
             .gallery-layout-grid { grid-template-columns: repeat(2, 1fr); }
             .achievers-matrix-grid { grid-template-columns: repeat(3, 1fr); }
             .vision-mission-container { grid-template-columns: 1fr; }
+            .premium-admission-ad-box { grid-template-columns: 1fr; padding: 40px 30px; }
         }
 
         @media (max-width: 768px) {
@@ -575,9 +739,14 @@
             .block-title { font-size: 1.6rem; }
             
             .layout-grid-2, .layout-grid-3, .layout-grid-4, .achievers-matrix-grid, .gallery-layout-grid, .admissions-split-container, .office-grid-layout, .spotlight-layout { grid-template-columns: 1fr; }
-            .premium-admission-ad-box { grid-template-columns: 1fr; text-align: center; padding: 25px; }
+            .premium-admission-ad-box { padding: 35px 20px; text-align: center; }
             .ad-info-side { text-align: center; }
-            .ad-info-side h4 { font-size: 1.7rem; }
+            .ad-info-side h4 { font-size: 1.9rem; }
+            .ad-info-side h5 { border-left: none; padding-left: 0; font-size: 1rem; }
+            .ad-features-row { grid-template-columns: 1fr; gap: 10px; text-align: left; max-width: 300px; margin: 0 auto 20px; }
+            
+            .hero-graphics-side { grid-template-columns: 1fr; }
+            .civil-graphic-card:has(+.civil-graphic-card) { margin-top: 0; }
             
             .spotlight-layout { grid-template-columns: 1fr; }
             .spotlight-right-panel { padding: 30px 20px; }
@@ -657,11 +826,36 @@
 
     <div id="view-home" class="dashboard-view-panel">
         <section class="academy-hero-billboard">
-            <div class="content-container hero-content" style="padding:0;">
-                <h2>DR VIVEK SHINDE PRASHASKIYA MAHAVIDYALAYA, BHADRAWATI</h2>
-                <p>"We Will Fulfill Your Dream of Becoming an Officer...!"</p>
-                <div style="margin-top: 35px;">
-                    <a href="#view-admission" class="tab-trigger-node enroll-action-btn" style="padding: 15px 40px; font-size: 0.95rem; font-weight: 700; border: none; display: inline-block; text-decoration: none; border-radius: 4px;">Online Admission</a>
+            <div class="hero-layout-wrapper">
+                <div class="hero-text-side">
+                    <h2>DR VIVEK SHINDE PRASHASKIYA MAHAVIDYALAYA, BHADRAWATI</h2>
+                    <p>"We Will Fulfill Your Dream of Becoming an Officer...!"</p>
+                    <div>
+                        <a href="#view-admission" class="tab-trigger-node enroll-action-btn" style="padding: 15px 40px; font-size: 0.95rem; font-weight: 700; border: none; display: inline-block; text-decoration: none; border-radius: 4px;">Initialize Online Admission</a>
+                    </div>
+                </div>
+                
+                <div class="hero-graphics-side">
+                    <div class="civil-graphic-card">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <h4>UPSC / MPSC</h4>
+                        <span>Syllabus Target</span>
+                    </div>
+                    <div class="civil-graphic-card">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <h4>Governance</h4>
+                        <span>Public Administration</span>
+                    </div>
+                    <div class="civil-graphic-card">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <h4>Bureaucracy</h4>
+                        <span>Officer Protocol</span>
+                    </div>
+                    <div class="civil-graphic-card">
+                        <i class="fa-solid fa-award"></i>
+                        <h4>National Rank</h4>
+                        <span>Elite Achievement</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -719,19 +913,29 @@
 
         <div class="premium-admission-ad-box">
             <div class="ad-info-side">
-                <span class="flashing-badge"><i class="fa-solid fa-graduation-cap"></i> Academic Session 2026 - 2027</span>
-                <h4>College Admission Open</h4>
-                <h5>Officer Cadets Integrated Preparatory Track</h5>
-                <p>Applications are formally invited for regular university degree courses integrated seamlessly with structural coaching for UPSC, MPSC, Banking, and Defense examinations. Learn under serving senior mentors and retired civil officers.</p>
+                <div class="ad-academy-tag">
+                    <i class="fa-solid fa-star-exclamation animate-pulse"></i> Central India's Premier Officer Hub
+                </div>
+                <h4>Shape Your Destiny. <br>Become an <span>IAS, IPS, or MPSC Officer</span></h4>
+                <h5>Integrated University Degree + Civil Services Blueprint</h5>
+                <p>Begin your competitive administrative journey from day one of graduation. We bridge the educational landscape by blending regular university degrees with top-tier UPSC, MPSC, Banking, and Defense syllabus paradigms monitored by active mentors and retired civil servants.</p>
+                
+                <div class="ad-features-row">
+                    <div class="ad-feature-item"><i class="fa-solid fa-circle-bolt"></i> Daily GS Trackers & CSAT Exams</div>
+                    <div class="ad-feature-item"><i class="fa-solid fa-user-shield"></i> Standard Military Discipline</div>
+                    <div class="ad-feature-item"><i class="fa-solid fa-podium"></i> Real-Panel Mock Interviews</div>
+                    <div class="ad-feature-item"><i class="fa-solid fa-building-columns"></i> KKSU University Affiliated</div>
+                </div>
             </div>
+            
             <div class="ad-action-side">
-                <div class="ad-highlight-title">Core Streams Open</div>
+                <div class="ad-highlight-title">Academic Streams Open</div>
                 <ul>
-                    <li><i class="fa-solid fa-circle-check"></i> B.A. Civil Service (Marathi Medium)</li>
-                    <li><i class="fa-solid fa-circle-check"></i> M.A. Public Admin (Marathi Medium)</li>
-                    <li><i class="fa-solid fa-circle-check"></i> P.G.D.C.A. Diploma (English Medium)</li>
+                    <li><i class="fa-solid fa-graduation-cap"></i> B.A. Civil Service <span style="margin-left:auto; font-size:0.75rem; background:rgba(214,175,55,0.2); color:var(--gold); padding:2px 8px; border-radius:4px;">Marathi Medium</span></li>
+                    <li><i class="fa-solid fa-building-user"></i> M.A. Public Admin <span style="margin-left:auto; font-size:0.75rem; background:rgba(214,175,55,0.2); color:var(--gold); padding:2px 8px; border-radius:4px;">Marathi Medium</span></li>
+                    <li><i class="fa-solid fa-laptop-code"></i> P.G.D.C.A. Diploma <span style="margin-left:auto; font-size:0.75rem; background:rgba(214,175,55,0.2); color:var(--gold); padding:2px 8px; border-radius:4px;">English Medium</span></li>
                 </ul>
-                <a href="#view-admission" class="tab-trigger-node enroll-action-btn" style="padding: 12px 25px; font-size: 0.85rem; font-weight: 700; text-align: center; width: 100%;">Online Application Portal <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#view-admission" class="tab-trigger-node enroll-action-btn" style="padding: 14px 25px; font-size: 0.9rem; font-weight: 800; text-align: center; width: 100%; letter-spacing: 0.5px; border-radius: 8px;">Secure Your Seat Now <i class="fa-solid fa-arrow-right-long" style="margin-left:8px;"></i></a>
             </div>
         </div>
 
@@ -835,18 +1039,14 @@
             <div class="vision-mission-container">
                 <div class="vm-card-premium vision">
                     <div class="vm-icon-header">
-                        <div class="vm-icon-circle">
-                            <i class="fa-solid fa-eye"></i>
-                        </div>
+                        <div class="vm-icon-circle"><i class="fa-solid fa-eye"></i></div>
                         <h3>Vision</h3>
                     </div>
                     <p>To bring quality education and guidance to rural homes, Administration, industry, business education, politics, social work, and creating creative leadership across the regional ecosystem.</p>
                 </div>
                 <div class="vm-card-premium mission">
                     <div class="vm-icon-header">
-                        <div class="vm-icon-circle">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
+                        <div class="vm-icon-circle"><i class="fa-solid fa-bullseye"></i></div>
                         <h3>Mission</h3>
                     </div>
                     <p>To actively contribute to the development of man and the nation by providing necessary information, strategic academic environments, deep inspiration, holistic support, and expert resources for the multifaceted growth of today's youth.</p>
